@@ -1,39 +1,766 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Launching Soon</title>
-  <style>
-    *{box-sizing:border-box}
-    html,body{height:100svh; width:100svw}
-    body{
-      margin:0; overflow:hidden;
-      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-      display:flex; align-items:center; justify-content:center;
-      background:#ffffff;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
-    }
-    /* Single responsive image filling available viewport minus safe-area insets */
-    img.hero{
-      max-width: calc(100svw - (env(safe-area-inset-left) + env(safe-area-inset-right)));
-      max-height: calc(100svh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)));
-      width:auto; height:auto;
-      object-fit: contain; object-position: center;
-      display:block;
-    }
 
-    /* Fallback for browsers without dynamic viewport support */
-    @supports not (height: 100svh){
-      html,body{height:100vh; width:100vw}
-      img.hero{
-        max-width: calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)));
-        max-height: calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)));
-      }
-    }
-  </style>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Siya Tour N Travels - Your Travel Partner for Tours, Flights, Visa & More</title>
+  <meta name="description" content="Siya Tour N Travels offers domestic & international tour packages, flight bookings, train tickets, visa services in Ahmedabad. Best travel deals & 24/7 support.">
+  <meta name="keywords" content="tour packages, flight booking, train tickets, visa services, international tours, domestic tours, travel agency Ahmedabad">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Header & Footer Loader Script -->
+  <script src="assets/js/header-loader.js"></script>
+
+  <!-- =======================================================
+  * Template Name: Tour
+  * Template URL: https://bootstrapmade.com/tour-bootstrap-travel-website-template/
+  * Updated: Jul 01 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
-  <img src="assets/logo.png" alt="Logo" class="hero" />
+
+<body class="index-page">
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="main">
+
+    <!-- Travel Hero Section -->
+    <section id="travel-hero" class="travel-hero section dark-background">
+
+      <div class="hero-background">
+        <video autoplay="" muted="" loop="">
+          <source src="assets/img/travel/video-2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
+              <h1 class="hero-title">Your Complete Travel Solution</h1>
+              <p class="hero-subtitle">From domestic to international tours, flight bookings, train tickets to visa services - Siya Tour N Travels is your trusted partner for all travel needs. Experience seamless travel planning with our expert team.</p>
+              <div class="hero-buttons">
+                <a href="#featured-destinations" class="btn btn-primary me-3">Explore Tours</a>
+                <a href="contact.html" class="btn btn-outline">Get Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Travel Hero Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- About Us Content -->
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="content">
+              <h3>Travel with Siya Tour N Travels</h3>
+              <p>At Siya Tour N Travels, we specialize in creating unforgettable travel experiences for our clients. Whether you're planning a domestic getaway or an international adventure, looking for luxury tours or budget-friendly packages, we have something for everyone.</p>
+              <p>Our comprehensive services include tour packages, flight bookings, train reservations, and visa assistance. Located in Ahmedabad, we serve travelers across Gujarat and beyond with personalized service and competitive pricing.</p>
+              <div class="stats-row">
+                <div class="stat-item">
+                  <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="2" class="purecounter">0</span>
+                  <div class="stat-label">Happy Travelers</div>
+                </div>
+                <div class="stat-item">
+                  <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2" class="purecounter">0</span>
+                  <div class="stat-label">Destinations</div>
+                </div>
+                <div class="stat-item">
+                  <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="2" class="purecounter">0</span>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-image">
+              <img src="assets/img/travel/showcase-8.webp" alt="Travel Experience" class="img-fluid rounded-4">
+              <div class="experience-badge">
+                <div class="experience-number">5+</div>
+                <div class="experience-text">Years of Excellence</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- End About Us Content -->
+
+        <!-- Why Choose Us -->
+        <div class="why-choose-section">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+              <h3>Why Choose Siya Tour N Travels</h3>
+              <p>We are your one-stop solution for all travel needs. From tour packages to visa services, we ensure a hassle-free travel experience with personalized attention and competitive pricing.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <h4>Tour Packages</h4>
+                <p>Customized domestic and international tour packages for families, couples, and groups with competitive pricing and excellent service.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-airplane"></i>
+                </div>
+                <h4>Flight Booking</h4>
+                <p>Easy flight reservations with best available fares for domestic and international destinations. Compare prices and book instantly.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-train-front"></i>
+                </div>
+                <h4>Train Tickets</h4>
+                <p>Convenient train ticket booking across India with confirmed reservations and real-time availability checking.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-passport"></i>
+                </div>
+                <h4>Visa Services</h4>
+                <p>Complete visa assistance for all countries with document guidance, application support, and timely processing.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-cash-stack"></i>
+                </div>
+                <h4>Best Prices</h4>
+                <p>Competitive pricing with transparent costs and no hidden charges. Get maximum value for your travel budget.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h4>24/7 Support</h4>
+                <p>Round-the-clock customer support for all your travel needs. Our expert team is always ready to assist you.</p>
+              </div>
+            </div>
+          </div><!-- End Features Grid -->
+        </div><!-- End Why Choose Us -->
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Featured Destinations Section -->
+    <section id="featured-destinations" class="featured-destinations section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Destinations</h2>
+        <div><span>Check Our</span> <span class="description-title">Featured Destinations</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="featured-destination">
+              <div class="destination-overlay">
+                <img src="assets/img/travel/maldives-home.webp" alt="Maldives Paradise" class="img-fluid">
+                <div class="destination-info">
+                  <span class="destination-tag">Luxury Paradise</span>
+                  <h3>Maldives</h3>
+                  <p class="location"><i class="bi bi-geo-alt-fill"></i> Paradise on Earth</p>
+                  <p class="description">Luxury water villas, crystal clear waters, romantic escapes, and unforgettable honeymoon experiences in this ultimate tropical paradise.</p>
+                  <div class="destination-meta">
+                    <div class="tours-count">
+                      <i class="bi bi-collection"></i>
+                      <span>Multiple Packages</span>
+                    </div>
+                    <div class="rating">
+                      <i class="bi bi-star-fill"></i>
+                      <span>Perfect for Couples</span>
+                    </div>
+                  </div>
+                  <div class="price-info">
+                    <span class="starting-from">Perfect for</span>
+                    <span class="amount">Honeymoons</span>
+                  </div>
+                  <a href="#" class="explore-btn">
+                    <span>Explore Now</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+
+              <div class="col-12" data-aos="fade-left" data-aos-delay="300">
+                <div class="compact-destination">
+                  <div class="destination-image">
+                    <img src="assets/img/travel/destination-7.webp" alt="Nepal Adventure" class="img-fluid">
+                    <div class="badge-offer">Spiritual Journey</div>
+                  </div>
+                  <div class="destination-details">
+                    <h4>Nepal - Heart of the Himalayas</h4>
+                    <p class="location"><i class="bi bi-geo-alt"></i> Himalayan Kingdom</p>
+                    <p class="brief">Majestic mountains, spiritual sites, adventure activities, and scenic beauty close to nature with ancient temples.</p>
+                    <div class="stats-row">
+                      <span class="tour-count"><i class="bi bi-calendar-check"></i> Multiple Tours</span>
+                      <span class="rating"><i class="bi bi-star-fill"></i> 4.9</span>
+                      <span class="price">Pilgrimage & Adventure</span>
+                    </div>
+                    <a href="#" class="quick-link">View Details <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12" data-aos="fade-left" data-aos-delay="400">
+                <div class="compact-destination">
+                  <div class="destination-image">
+                    <img src="assets/img/travel/destination-11.webp" alt="Dubai Luxury" class="img-fluid">
+                  </div>
+                  <div class="destination-details">
+                    <h4>Cultural Heritage</h4>
+                    <p class="location"><i class="bi bi-geo-alt"></i> Peru</p>
+                    <p class="brief">Discover ancient civilizations, colorful markets, and archaeological wonders in the heart of South America.</p>
+                    <div class="stats-row">
+                      <span class="tour-count"><i class="bi bi-calendar-check"></i> Luxury Tours</span>
+                      <span class="rating"><i class="bi bi-star-fill"></i> 4.8</span>
+                      <span class="price">Modern Marvel</span>
+                    </div>
+                    <a href="#" class="quick-link">View Details <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12" data-aos="fade-left" data-aos-delay="500">
+                <div class="compact-destination">
+                  <div class="destination-image">
+                    <img src="assets/img/travel/destination-16.webp" alt="Japan Culture" class="img-fluid">
+                    <div class="badge-offer limited">Cherry Blossom Season</div>
+                  </div>
+                  <div class="destination-details">
+                    <h4>Japan - Land of Rising Sun</h4>
+                    <p class="location"><i class="bi bi-geo-alt"></i> East Asia</p>
+                    <p class="brief">Blend of ancient traditions and modern marvels, cherry blossoms, historic temples, and breathtaking Mount Fuji views.</p>
+                    <div class="stats-row">
+                      <span class="tour-count"><i class="bi bi-calendar-check"></i> Cultural Tours</span>
+                      <span class="rating"><i class="bi bi-star-fill"></i> 4.9</span>
+                      <span class="price">Cultural Heritage</span>
+                    </div>
+                    <a href="#" class="quick-link">View Details <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Destinations Section -->
+
+    <!-- Featured Tours Section -->
+    <section id="featured-tours" class="featured-tours section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Tours</h2>
+        <div><span>Check Our</span> <span class="description-title">Featured Tour Packages</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-1.webp" alt="Maldives Paradise" class="img-fluid" loading="lazy">
+                <div class="tour-badge">Luxury Paradise</div>
+              </div>
+              <div class="tour-content">
+                <h4>Maldives - Paradise on Earth</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-heart"></i> Romance</span>
+                  <span class="group-size"><i class="bi bi-star-fill"></i> Luxury</span>
+                </div>
+                <p>Experience ultimate luxury and tranquility with overwater villas, crystal-clear lagoons, and breathtaking sunsets. Perfect for honeymooners and luxury travelers.</p>
+                <div class="tour-highlights">
+                  <span>Water Villas</span>
+                  <span>Crystal Waters</span>
+                  <span>Romantic Escapes</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <span>Perfect for Couples</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-4.webp" alt="Dubai Experience" class="img-fluid" loading="lazy">
+                <div class="tour-badge limited">City of Dreams</div>
+              </div>
+              <div class="tour-content">
+                <h4>Dubai - Modern Luxury</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-buildings"></i> Modern</span>
+                  <span class="group-size"><i class="bi bi-shopping-bag"></i> Shopping</span>
+                </div>
+                <p>Experience luxury, modern architecture, desert safaris, Burj Khalifa, dhow cruises, and world class shopping in this dazzling Emirates city.</p>
+                <div class="tour-highlights">
+                  <span>Burj Khalifa</span>
+                  <span>Desert Safari</span>
+                  <span>Dubai Mall</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <span>Family & Adventure</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-2.webp" alt="Thailand Adventure" class="img-fluid" loading="lazy">
+                <div class="tour-badge new">Tropical Paradise</div>
+              </div>
+              <div class="tour-content">
+                <h4>Thailand - Land of Smiles</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-water"></i> Beaches</span>
+                  <span class="group-size"><i class="bi bi-cup-hot"></i> Culture</span>
+                </div>
+                <p>Enjoy Bangkok city life, Pattaya nightlife, Phuket beaches, island hopping, and Thai cultural shows with stunning beaches and vibrant cities.</p>
+                <div class="tour-highlights">
+                  <span>Phuket Beaches</span>
+                  <span>Bangkok Temples</span>
+                  <span>Island Hopping</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <span>Beach & Culture</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-5.webp" alt="Japan Culture" class="img-fluid" loading="lazy">
+                <div class="tour-badge">Cherry Blossoms</div>
+              </div>
+              <div class="tour-content">
+                <h4>Japan - Land of Rising Sun</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-flower1"></i> Seasons</span>
+                  <span class="group-size"><i class="bi bi-building"></i> Culture</span>
+                </div>
+                <p>Blend of ancient traditions and modern marvels with cherry blossoms, historic temples, Mount Fuji views, and cutting-edge technology.</p>
+                <div class="tour-highlights">
+                  <span>Cherry Blossoms</span>
+                  <span>Mount Fuji</span>
+                  <span>Tokyo Culture</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <span>Cultural Heritage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-6.webp" alt="Bali Paradise" class="img-fluid" loading="lazy">
+                <div class="tour-badge cultural">Island of Gods</div>
+              </div>
+              <div class="tour-content">
+                <h4>Bali - Tropical Paradise</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-tree"></i> Nature</span>
+                  <span class="group-size"><i class="bi bi-heart"></i> Spiritual</span>
+                </div>
+                <p>Stunning beaches, lush rice terraces, volcanic mountains, ancient temples, wellness retreats, and vibrant Hindu culture in Indonesia's paradise.</p>
+                <div class="tour-highlights">
+                  <span>Ubud Culture</span>
+                  <span>Beach Resorts</span>
+                  <span>Temple Tours</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <span>Spiritual Journey</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="tour-card">
+              <div class="tour-image">
+                <img src="assets/img/travel/tour-8.webp" alt="Nepal Adventure" class="img-fluid" loading="lazy">
+                <div class="tour-badge adventure">Himalayan Kingdom</div>
+              </div>
+              <div class="tour-content">
+                <h4>Nepal - Heart of Himalayas</h4>
+                <div class="tour-meta">
+                  <span class="duration"><i class="bi bi-mountain"></i> Mountains</span>
+                  <span class="group-size"><i class="bi bi-peace"></i> Spiritual</span>
+                </div>
+                <p>Majestic mountains, spiritual sites, adventure activities, and scenic beauty close to nature. Home to Mount Everest and ancient temples.</p>
+                <div class="tour-highlights">
+                  <span>Mount Everest</span>
+                  <span>Ancient Temples</span>
+                  <span>Adventure Trekking</span>
+                </div>
+                <div class="tour-action">
+                  <a href="#" class="btn-book">Explore Package</a>
+                  <div class="tour-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <span>Adventures</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Tour Item -->
+
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+          <a href="tours.html" class="btn-view-all">View All Tours</a>
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Tours Section -->
+
+    <!-- Testimonials Home Section -->
+    <section id="testimonials-home" class="testimonials-home section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div><span>What Our Customers</span> <span class="description-title">Are Saying</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>At Siya Tour N Travels, we believe in creating memorable experiences for every traveler. Our team's dedication to providing personalized service and affordable packages has helped thousands of families explore their dream destinations. We're passionate about making travel accessible to everyone.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/person/person-f-5.webp" class="testimonial-img" alt="">
+                <h3>Monika Kanpariya</h3>
+                <h4>CEO &amp; Founder</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Working with Siya Tour N Travels has been an incredible journey. I've had the privilege of helping families plan their perfect vacations, from romantic Maldives escapes to adventurous Nepal treks. Every satisfied customer's smile makes our efforts worthwhile.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/person/person-m-9.webp" class="testimonial-img" alt="">
+                <h3>Chirag Vasani</h3>
+                <h4>Travel Consultant</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Our expertise in visa services and international tour planning has opened doors to global adventures for countless travelers. At Siya Tour N Travels, we handle every detail from documentation to destination experiences, ensuring stress-free travel for our clients.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/person/person-m-12.webp" class="testimonial-img" alt="">
+                <h3>Jatin Panchal</h3>
+                <h4>Visa Specialist</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Managing flight bookings and travel logistics for our clients is what I'm passionate about. Whether it's finding the best airline deals or coordinating complex itineraries, I ensure our travelers get the best value and seamless booking experience with Siya Tour N Travels.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/person/person-f-12.webp" class="testimonial-img" alt="">
+                <h3>Dipak Panchal</h3>
+                <h4>Flight Operations Manager</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Being part of Siya Tour N Travels means being part of every customer's journey. From the initial inquiry to the final departure, I ensure our clients receive personalized attention and expert guidance. Our commitment to excellence has built lasting relationships with travelers across Gujarat.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/person/person-m-13.webp" class="testimonial-img" alt="">
+                <h3>Deepak Patel</h3>
+                <h4>Customer Relations Manager</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Home Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
+          <div class="content-wrapper">
+            <div class="badge-wrapper">
+              <span class="promo-badge">Limited Time Offer</span>
+            </div>
+            <h2>Discover Your Next Adventure</h2>
+            <p>Unlock incredible destinations with our specially curated travel packages. From exotic beaches to mountain peaks, your perfect getaway awaits.</p>
+
+            <div class="action-section">
+              <div class="main-actions">
+                <a href="destinations.html" class="btn btn-explore">
+                  <i class="bi bi-compass"></i>
+                  Explore Now
+                </a>
+                <!-- <a href="deals.html" class="btn btn-deals">
+                  <i class="bi bi-percent"></i>
+                  View Deals
+                </a> -->
+              </div>
+
+              <div class="quick-contact">
+                <span class="contact-label">Need help choosing?</span>
+                <a href="tel:+1555123456" class="contact-link">
+                  <i class="bi bi-telephone"></i>
+                  Call +91 9898722582
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-element">
+            <img src="assets/img/travel/showcase-3.webp" alt="Travel Adventure" class="hero-image" loading="lazy">
+            <div class="image-overlay">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Destinations</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Happy Travelers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="benefits-showcase" data-aos="fade-up" data-aos-delay="400">
+          <div class="benefits-header">
+            <h3>Why Choose Siya Tour N Travels</h3>
+            <p>Experience the difference with our dedicated travel services</p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card" data-aos="flip-left" data-aos-delay="450">
+              <div class="benefit-visual">
+                <div class="benefit-icon-wrap">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="benefit-pattern"></div>
+              </div>
+              <div class="benefit-content">
+                <h4>Expert Destination Knowledge</h4>
+                <p>Our experienced team provides insider knowledge and local insights for authentic travel experiences</p>
+              </div>
+            </div>
+
+            <div class="benefit-card" data-aos="flip-left" data-aos-delay="500">
+              <div class="benefit-visual">
+                <div class="benefit-icon-wrap">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <div class="benefit-pattern"></div>
+              </div>
+              <div class="benefit-content">
+                <h4>24/7 Customer Support</h4>
+                <p>Round-the-clock assistance for all your travel needs, from booking to destination support</p>
+              </div>
+            </div>
+
+            <div class="benefit-card" data-aos="flip-left" data-aos-delay="550">
+              <div class="benefit-visual">
+                <div class="benefit-icon-wrap">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="benefit-pattern"></div>
+              </div>
+              <div class="benefit-content">
+                <h4>Trusted & Reliable</h4>
+                <p>5+ years of excellence in travel services with transparent pricing and no hidden charges</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Tour Packages - Siya Tour N Travels | International & Domestic Tour Packages</title>
+  <meta name="description" content="Explore amazing tour packages with Siya Tour N Travels. International tours to Dubai, Japan, Thailand, Maldives and domestic tours to Kashmir, Kerala, Rajasthan, Goa.">
+  <meta name="keywords" content="tour packages, international tours, domestic tours, travel packages, Dubai tours, Thailand tours, Kashmir tours, Kerala tours">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Header & Footer Loader Script -->
+  <script src="assets/js/header-loader.js"></script>
+
+  <!-- Custom Tour Card Styles -->
+  <style>
+    /* Tour Card Enhancements */
+    .tour-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: #fff;
+      border: 1px solid #eee;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .tour-image {
+      position: relative;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .tour-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .tour-card:hover .tour-image img {
+      transform: scale(1.05);
+    }
+
+    .tour-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Badge Color Variations */
+    .tour-badge.luxury { background: linear-gradient(135deg, #FFD700, #FFA500); }
+    .tour-badge.modern { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .tour-badge.tropical { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
+    .tour-badge.cultural { background: linear-gradient(135deg, #fc466b, #3f5efb); }
+    .tour-badge.nature { background: linear-gradient(135deg, #56ab2f, #a8e6cf); }
+    .tour-badge.adventure { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+    .tour-badge.family { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .tour-badge.diverse { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+    .tour-badge.heritage { background: linear-gradient(135deg, #fa709a, #fee140); }
+    .tour-badge.paradise { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+    .tour-badge.wellness { background: linear-gradient(135deg, #96fbc4, #f9f047); }
+    .tour-badge.royal { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+    .tour-badge.beach { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+    .tour-badge.mountain { background: linear-gradient(135deg, #fd79a8, #fdcb6e); }
+    .tour-badge.spiritual { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+
+    .tour-content {
+      padding: 20px;
+    }
+
+    .tour-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+
+    .tour-content p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .tour-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .highlight-item {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 15px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #495057;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .highlight-item:hover {
+      background: #e9ecef;
+      transform: translateY(-1px);
+    }
+
+    .highlight-item i {
+      margin-right: 4px;
+      color: #007bff;
+    }
+
+    .tour-content .btn {
+      width: 100%;
+      border-radius: 8px;
+      font-weight: 600;
+      padding: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+
+    .tour-content .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Category Cards */
+    .category-card {
+      background: #fff;
+      border: 2px solid #f1f1f1;
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .category-card:hover {
+      border-color: #007bff;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.1);
+    }
+
+    .category-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .category-card h5 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+  </style>
+</head>
+
+<body class="tours-page">
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/travel/showcase-8.webp);">
+      <div class="container position-relative">
+        <h1>Tour Packages</h1>
+        <p>Discover the world with Siya Tour N Travels. From international destinations to domestic getaways, we offer comprehensive tour packages designed for every traveler's dream.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Tours</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Travel Tours Section -->
+    <section id="travel-tours" class="travel-tours section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Tour Categories -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-12">
+            <h3 class="section-subtitle mb-4">Categories</h3>
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-airplane"></i>
+                  </div>
+                  <h5>International</h5>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <h5>Domestic</h5>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                  <h5>Honeymoon</h5>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-compass"></i>
+                  </div>
+                  <h5>Adventure</h5>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-water"></i>
+                  </div>
+                  <h5>Beach</h5>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-6 mb-3">
+                <div class="category-card">
+                  <div class="category-icon">
+                    <i class="bi bi-building"></i>
+                  </div>
+                  <h5>Cultural</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tour Grid -->
+        <div class="row" data-aos="fade-up" data-aos-delay="600">
+          <div class="col-12">
+            <h3 class="section-subtitle mb-4">All Tours</h3>
+            <div class="row">
+              
+              <!-- International Tours -->
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/maldives-home.jpg" alt="Maldives" class="img-fluid">
+                    <div class="tour-badge luxury">Paradise</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Maldives - Paradise on Earth</h4>
+                    <p>Luxury water villas, crystal clear waters, romantic escapes, and unforgettable honeymoon experiences in this ultimate tropical paradise.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Overwater Villas</span>
+                      <span class="highlight-item"><i class="bi bi-heart"></i> Perfect for Couples</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/destination-20.webp" alt="Dubai" class="img-fluid">
+                    <div class="tour-badge modern">Luxury</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Dubai - City of Dreams</h4>
+                    <p>Experience luxury, modern architecture, desert safaris, Burj Khalifa, dhow cruises, and world class shopping in this dazzling Emirates city.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-buildings"></i> Modern Marvels</span>
+                      <span class="highlight-item"><i class="bi bi-cart"></i> Shopping Paradise</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/tour-2.webp" alt="Thailand" class="img-fluid">
+                    <div class="tour-badge tropical">Beach & Culture</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Thailand - Land of Smiles</h4>
+                    <p>Enjoy Bangkok city life, Pattaya nightlife, Phuket beaches, island hopping, and Thai cultural shows with stunning beaches and vibrant cities.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Beautiful Beaches</span>
+                      <span class="highlight-item"><i class="bi bi-building"></i> Cultural Temples</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/japan.avif" alt="Japan" class="img-fluid">
+                    <div class="tour-badge cultural">Cultural</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Japan - Land of Rising Sun</h4>
+                    <p>Blend of ancient traditions and modern marvels, cherry blossoms, historic temples, Mount Fuji views, and cutting-edge technology.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-flower1"></i> Cherry Blossoms</span>
+                      <span class="highlight-item"><i class="bi bi-mountain"></i> Mount Fuji</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/bali.jpg" alt="Bali" class="img-fluid">
+                    <div class="tour-badge nature">Island Paradise</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Bali - Island of Gods</h4>
+                    <p>Stunning beaches, lush rice terraces, volcanic mountains, ancient temples, wellness retreats, and vibrant Hindu culture in Indonesia's paradise.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-tree"></i> Rice Terraces</span>
+                      <span class="highlight-item"><i class="bi bi-heart"></i> Spiritual Retreats</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/nepal.avif" alt="Nepal" class="img-fluid">
+                    <div class="tour-badge adventure">Adventure</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Nepal - Heart of Himalayas</h4>
+                    <p>Majestic mountains, spiritual sites, adventure activities, and scenic beauty. Home to Mount Everest and ancient temples.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-mountain"></i> Mount Everest</span>
+                      <span class="highlight-item"><i class="bi bi-compass"></i> Spiritual Journey</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/singapore.avif" alt="Singapore" class="img-fluid">
+                    <div class="tour-badge family">Family</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Singapore - Lion City</h4>
+                    <p>Clean, vibrant city with Marina Bay Sands, Sentosa Island, Universal Studios, and futuristic attractions perfect for families.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-building"></i> Marina Bay</span>
+                      <span class="highlight-item"><i class="bi bi-controller"></i> Theme Parks</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/malaysia.avif" alt="Malaysia" class="img-fluid">
+                    <div class="tour-badge diverse">Diverse</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Malaysia - Truly Asia</h4>
+                    <p>Kuala Lumpur, Genting Highlands, theme parks, cultural diversity, and shopping attractions in this vibrant Southeast Asian country.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-building"></i> Twin Towers</span>
+                      <span class="highlight-item"><i class="bi bi-cart"></i> Shopping</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/srilanka.jpg" alt="Sri Lanka" class="img-fluid">
+                    <div class="tour-badge heritage">Pearl of Ocean</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Sri Lanka - Pearl of Indian Ocean</h4>
+                    <p>Golden beaches, tea gardens, wildlife safaris, heritage temples, and scenic train journeys in this beautiful island nation.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-train-front"></i> Scenic Trains</span>
+                      <span class="highlight-item"><i class="bi bi-tree-fill"></i> Tea Gardens</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <!-- Domestic Tours -->
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/kashmir.jpg" alt="Kashmir" class="img-fluid">
+                    <div class="tour-badge paradise">Paradise</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Kashmir - Paradise on Earth</h4>
+                    <p>Snow-capped mountains, Dal Lake houseboats, lush valleys, and breathtaking natural beauty in the Himalayas of India.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Houseboat Stay</span>
+                      <span class="highlight-item"><i class="bi bi-mountain"></i> Scenic Mountains</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/kerala.jpg" alt="Kerala" class="img-fluid">
+                    <div class="tour-badge wellness">God's Country</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Kerala - God's Own Country</h4>
+                    <p>Backwaters, hill stations, beaches, Ayurveda, spice plantations, and serene natural experiences in South India.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Backwaters</span>
+                      <span class="highlight-item"><i class="bi bi-heart-pulse"></i> Ayurveda</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/rajasthan.jpg" alt="Rajasthan" class="img-fluid">
+                    <div class="tour-badge royal">Royal Heritage</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Rajasthan - Land of Kings</h4>
+                    <p>Royal palaces, forts, deserts, colorful culture, and rich heritage across Jaipur, Udaipur, and Jodhpur in India's royal state.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-gem"></i> Royal Palaces</span>
+                      <span class="highlight-item"><i class="bi bi-sun"></i> Desert Safari</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/goa.jpg" alt="Goa" class="img-fluid">
+                    <div class="tour-badge beach">Beach Fun</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Goa - Beach Capital of India</h4>
+                    <p>Beach fun, nightlife, water sports, Portuguese heritage, and relaxing holidays on India's western coast.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Golden Beaches</span>
+                      <span class="highlight-item"><i class="bi bi-music-note"></i> Vibrant Nightlife</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/himachal.jpg" alt="Himachal Pradesh" class="img-fluid">
+                    <div class="tour-badge mountain">Hill Station</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Shimla & Manali - Hill Station Paradise</h4>
+                    <p>Hill station charm, snow activities, scenic valleys, and romantic getaways in the beautiful state of Himachal Pradesh.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-snow"></i> Snow Activities</span>
+                      <span class="highlight-item"><i class="bi bi-heart"></i> Romantic Escape</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="tour-card">
+                  <div class="tour-image">
+                    <img src="assets/img/travel/uttarakhand.jpg" alt="Uttarakhand" class="img-fluid">
+                    <div class="tour-badge spiritual">Spiritual</div>
+                  </div>
+                  <div class="tour-content">
+                    <h4>Uttarakhand - Land of Gods</h4>
+                    <p>Spiritual destinations, hill stations, rivers, adventure sports, and peaceful retreats in the Himalayan state of India.</p>
+                    <div class="tour-highlights">
+                      <span class="highlight-item"><i class="bi bi-water"></i> Holy Rivers</span>
+                      <span class="highlight-item"><i class="bi bi-mountain"></i> Char Dham</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="row" data-aos="fade-up" data-aos-delay="700">
+          <div class="col-12">
+            <div class="cta-section text-center">
+              <h3>Need Help Choosing Your Perfect Tour?</h3>
+              <p>Our experienced travel consultants at Siya Tour N Travels are here to help you find the perfect tour package based on your preferences, budget, and travel dreams.</p>
+              <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary me-3">Contact Our Travel Experts</a>
+                <a href="destinations.html" class="btn btn-outline-primary">Explore All Destinations</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Travel Tours Section -->
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

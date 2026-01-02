@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Gallery - Siya Tour N Travels | Travel Memories & Destination Photos</title>
+  <meta name="description" content="Explore our gallery of beautiful travel destinations, memorable moments, and stunning locations from our tours. View photos from international and domestic trips with Siya Tour N Travels.">
+  <meta name="keywords" content="travel gallery, destination photos, tour memories, travel pictures, Siya Tour N Travels, Dubai photos, Maldives photos, Kashmir photos, Kerala photos">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Header & Footer Loader Script -->
+  <script src="assets/js/header-loader.js"></script>
+
+  <!-- Gallery Custom Styles -->
+  <style>
+    .gallery-info {
+      padding: 80px 0;
+    }
+
+    .gallery-info .info-item {
+      padding: 30px 20px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .gallery-info .info-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-info .icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #008cad, #008cad);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #fff;
+      font-size: 32px;
+    }
+
+    .gallery-info h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .gallery-info p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .gallery-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-image {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
+    }
+
+    .gallery-image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-image img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 123, 255, 0.9);
+      color: #fff;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .gallery-overlay p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    .gallery-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .gallery-actions a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-actions a:hover {
+      background: #fff;
+      color: #007bff;
+      transform: scale(1.1);
+    }
+
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .gallery-filters li {
+      padding: 10px 25px;
+      background: #fff;
+      border: 2px solid #f1f1f1;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      color: #666;
+    }
+
+    .gallery-filters li:hover,
+    .gallery-filters li.filter-active {
+      background: #007bff;
+      color: #fff;
+      border-color: #007bff;
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Tour
+  * Template URL: https://bootstrapmade.com/tour-bootstrap-travel-website-template/
+  * Updated: Jul 01 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="gallery-page">
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/travel/showcase-8.webp);">
+      <div class="container position-relative">
+        <h1>Travel Gallery</h1>
+        <p>Discover breathtaking moments and stunning destinations from our incredible journeys. Explore the beauty of international and domestic locations through our curated collection of travel memories.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Gallery</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Gallery Slider Section -->
+    <section id="gallery-slider" class="gallery-slider section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="gallery-container">
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 800,
+                "autoplay": {
+                  "delay": 4000
+                },
+                "effect": "coverflow",
+                "grabCursor": true,
+                "centeredSlides": true,
+                "slidesPerView": "auto",
+                "coverflowEffect": {
+                  "rotate": 50,
+                  "stretch": 0,
+                  "depth": 100,
+                  "modifier": 1,
+                  "slideShadows": true
+                },
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 10
+                  },
+                  "768": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 20
+                  },
+                  "1024": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 30
+                  }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-1.webp">
+                      <img src="assets/img/travel/tour-1.webp" class="img-fluid" alt="Maldives Paradise">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-2.webp">
+                      <img src="assets/img/travel/tour-2.webp" class="img-fluid" alt="Dubai Luxury">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-3.webp">
+                      <img src="assets/img/travel/tour-3.webp" class="img-fluid" alt="Kashmir Beauty">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-4.webp">
+                      <img src="assets/img/travel/tour-4.webp" class="img-fluid" alt="Thailand Beaches">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-5.webp">
+                      <img src="assets/img/travel/tour-5.webp" class="img-fluid" alt="Japan Culture">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-11.webp">
+                      <img src="assets/img/travel/tour-11.webp" class="img-fluid" alt="Kerala Backwaters">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-12.webp">
+                      <img src="assets/img/travel/tour-12.webp" class="img-fluid" alt="Rajasthan Heritage">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gallery-item">
+                  <div class="gallery-img">
+                    <a class="glightbox" data-gallery="images-gallery" href="assets/img/travel/tour-15.webp">
+                      <img src="assets/img/travel/tour-15.webp" class="img-fluid" alt="Goa Beaches">
+                      <div class="gallery-overlay">
+                        <i class="bi bi-plus-circle"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Slider Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="gallery-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-international">International</li>
+            <li data-filter=".filter-domestic">Domestic</li>
+            <li data-filter=".filter-beaches">Beaches</li>
+            <li data-filter=".filter-mountains">Mountains</li>
+          </ul>
+
+          <div class="row gallery-grid isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-international filter-beaches">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-1.webp" class="img-fluid" alt="Maldives Beach Resort">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Maldives Paradise</h4>
+                  <p>Crystal clear waters and luxury overwater villas in the Maldives.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-1.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-international">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-2.webp" class="img-fluid" alt="Dubai Skyline">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Dubai Skyline</h4>
+                  <p>Modern architecture and luxury experiences in Dubai.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-2.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-domestic filter-mountains">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-3.webp" class="img-fluid" alt="Kashmir Valley">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Kashmir Valley</h4>
+                  <p>Snow-capped mountains and serene Dal Lake houseboats.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-3.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-international filter-beaches">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-4.webp" class="img-fluid" alt="Thailand Beaches">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Thailand Beaches</h4>
+                  <p>Pristine beaches and vibrant island life in Thailand.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-4.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-international">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-5.webp" class="img-fluid" alt="Japan Culture">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Japan Traditions</h4>
+                  <p>Ancient temples and cherry blossoms in the Land of Rising Sun.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-5.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-international">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-6.webp" class="img-fluid" alt="Bali Rice Terraces">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Bali Rice Terraces</h4>
+                  <p>Lush green landscapes and spiritual temples in Bali.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-6.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-domestic">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-11.webp" class="img-fluid" alt="Kerala Backwaters">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Kerala Backwaters</h4>
+                  <p>Tranquil backwaters and traditional houseboats in God's Own Country.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-11.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+            <div class="col-xl-3 col-md-4 col-sm-6 gallery-item isotope-item filter-domestic">
+              <div class="gallery-card">
+                <div class="gallery-image">
+                  <img src="assets/img/travel/tour-12.webp" class="img-fluid" alt="Rajasthan Palaces">
+                </div>
+                <div class="gallery-overlay">
+                  <h4>Rajasthan Palaces</h4>
+                  <p>Royal heritage and majestic forts in the Land of Kings.</p>
+                  <div class="gallery-actions">
+                    <a href="assets/img/travel/tour-12.webp" title="View Image" class="glightbox"><i class="bi bi-eye"></i></a>
+                    <a href="#"><i class="bi bi-info-circle"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+    <!-- Gallery Info Section -->
+    <section id="gallery-info" class="gallery-info section light-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2>Capturing Your Travel Moments</h2>
+            <p class="lead">At Siya Tour N Travels, we believe that every journey tells a story. Our curated gallery showcases the breathtaking destinations, cultural experiences, and unforgettable moments from our tours. From the pristine beaches of Maldives to the royal palaces of Rajasthan, each image captures the essence of what makes these destinations special.</p>
+          </div>
+        </div>
+
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 mb-4">
+            <div class="info-item text-center">
+              <div class="icon">
+                <i class="bi bi-camera"></i>
+              </div>
+              <h4>Professional Photography</h4>
+              <p>Our experienced tour guides capture stunning moments during your journey, ensuring you have beautiful memories to cherish forever.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="info-item text-center">
+              <div class="icon">
+                <i class="bi bi-images"></i>
+              </div>
+              <h4>Destination Showcase</h4>
+              <p>Explore our extensive collection of destination photos to get inspired for your next adventure with authentic travel experiences.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="info-item text-center">
+              <div class="icon">
+                <i class="bi bi-share"></i>
+              </div>
+              <h4>Share Your Experience</h4>
+              <p>We love featuring photos from our travelers! Share your journey with us and become part of our growing travel community.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-12 text-center">
+            <a href="contact.html" class="btn btn-lg" style="color: white; background-color: #008cad;">Plan Your Photo-Perfect Trip</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Gallery Info Section -->
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
