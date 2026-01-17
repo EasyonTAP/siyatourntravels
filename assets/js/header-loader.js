@@ -37,9 +37,12 @@ function createFallbackHeader() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = `
             <header id="header" class="header d-flex align-items-center fixed-top">
+                
+                <!-- Only logo image positioned outside the header container -->
+                <img src="assets/img/logo.png" alt="Siya Tour N Travels" class="logo-image">
+ 
                 <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-                    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-                        <img src="assets/img/logo.png" alt="Siya Tour N Travels">
+                    <a href="index.html" class="logo-text d-flex align-items-center">
                         <h1 class="sitename">Siya Tour N Travels</h1>
                     </a>
                     <nav id="navmenu" class="navmenu">

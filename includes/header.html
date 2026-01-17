@@ -1,12 +1,14 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
+ 
+  <!-- Only logo image positioned outside the header container -->
+  <img src="assets/img/logo.png" alt="Siya Tour N Travels" class="logo-image">
+ 
   <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="assets/img/logo.png" alt="Siya Tour N Travels">
+ 
+    <a href="index.html" class="logo-text d-flex align-items-center">
       <h1 class="sitename">Siya Tour N Travels</h1>
     </a>
-
+ 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html" id="nav-home">Home</a></li>
@@ -20,19 +22,47 @@
             <!-- <li><a href="destination-details.html">Destination Details</a></li> -->
             <!-- <li><a href="tour-details.html">Tour Details</a></li> -->
             <!-- <li><a href="booking.html">Booking</a></li> -->
-            <li><a href="testimonials.html">Testimonials</a></li>
+            <!--<li><a href="testimonials.html">Testimonials</a></li>-->
             <!-- <li><a href="faq.html">Frequently Asked Questions</a></li> -->
             <!-- <li><a href="blog-details.html">Blog Details</a></li> -->
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </li>
         <li><a href="contact.html" id="nav-contact">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-
+ 
     <a class="btn-getstarted" href="destinations.html">Get Started</a>
-
+ 
   </div>
 </header>
+
+<a href="https://wa.me/message/L3HKDTEAI6VPL1" class="whatsapp-float" target="_blank">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    background-color: #25d366;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #1ebe5b;
+  }
+</style>
