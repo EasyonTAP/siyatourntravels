@@ -39,11 +39,11 @@ function createFallbackHeader() {
             <header id="header" class="header d-flex align-items-center fixed-top">
                 
                 <!-- Only logo image positioned outside the header container -->
-                <img src="assets/img/logo.png" alt="Siya Tour N Travels" class="logo-image">
+                <img src="assets/img/logo.png" alt="Siya World Holidays" class="logo-image">
  
                 <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
                     <a href="index.html" class="logo-text d-flex align-items-center">
-                        <h1 class="sitename">Siya Tour N Travels</h1>
+                        <h1 class="sitename">Siya World Holidays</h1>
                     </a>
                     <nav id="navmenu" class="navmenu">
                         <ul>
@@ -91,7 +91,7 @@ function createFallbackFooter() {
         footerPlaceholder.innerHTML = `
             <footer id="footer" class="footer position-relative dark-background">
                 <div class="container copyright text-center mt-4">
-                    <p>© <span>Copyright</span> <strong class="px-1 sitename">Siya Tour N Travels</strong> <span>All Rights Reserved</span></p>
+                    <p>© <span>Copyright</span> <strong class="px-1 sitename">Siya World Holidays</strong> <span>All Rights Reserved</span></p>
                     <div class="credits">Crafted with ❤️ by Chirag Vasani</div>
                 </div>
             </footer>
