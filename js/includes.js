@@ -26,8 +26,6 @@
         var currentPage = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
         currentPage = currentPage.split('?')[0].split('#')[0];
         if (!currentPage || currentPage === '' || currentPage === '/') currentPage = 'index.html';
-
-        // Remove .html extension for comparison
         var currentBase = currentPage.replace('.html', '');
 
         var navLinks = document.querySelectorAll('.tn-navbar .nav-link');
@@ -35,12 +33,26 @@
             var link = navLinks[i];
             var href = link.getAttribute('href') || '';
             var hrefBase = href.replace('.html', '');
-
-            // Match: "about" === "about" OR "about.html" === "about.html"
             if (hrefBase === currentBase || href === currentPage) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
+            }
+        }
+
+        // Mobile hamburger toggle (manual, works without Bootstrap JS re-init)
+        var toggleBtn = document.getElementById('tnMobileToggle');
+        var navCollapse = document.getElementById('navbarNav');
+        if (toggleBtn && navCollapse) {
+            toggleBtn.addEventListener('click', function () {
+                navCollapse.classList.toggle('show');
+            });
+            // Close menu when a link is clicked (mobile)
+            var mobileLinks = navCollapse.querySelectorAll('.nav-link');
+            for (var j = 0; j < mobileLinks.length; j++) {
+                mobileLinks[j].addEventListener('click', function () {
+                    navCollapse.classList.remove('show');
+                });
             }
         }
     });

@@ -1642,3 +1642,30 @@ body .text-muted, body .text-secondary {
 
 
 }
+
+
+/* ==========================================================
+   Mobile Navigation Fixes
+   ========================================================== */
+@media (max-width: 991px) {
+    #navbarNav {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.1);
+        margin-top: 0.5rem;
+    }
+    #navbarNav .navbar-nav {
+        gap: 0 !important;
+    }
+    #navbarNav .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-radius: 8px;
+    }
+    #navbarNav .nav-link.active {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        margin: 0.25rem 0;
+    }
+    .tn-w-30 { width: 30px; }
+}
