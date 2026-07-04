@@ -1,0 +1,1644 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&amp;display=swap');
+
+/* ==========================================================
+   TravelNest Bootstrap – Custom Overrides (style.css)
+   
+   Table of Contents:
+   1. Root Variables & Global Styles
+   2. Navigation & Header
+   3. Search Box & Tabs
+   4. Component Cards (Gateway, Destinations, Attractions, Team)
+   5. Flight Ticket Design & Custom Ticket Component
+   6. Modals & Offcanvas
+   7. Form Inputs (Custom Radios, Switches, Range Sliders)
+   8. Utility, Spacing & Contrast Overrides
+   9. Footer & Newsletter
+   10. Maps & Third-Party Library Integration (Leaflet)
+   11. Media Queries & Custom Breakpoints (Ultra-Wide Screens)
+   ========================================================== */
+
+/* === 1. Root Variables & Global Styles === */
+:root {
+    --tn-primary: #ffc107;
+    --tn-dark: #1a1a1a;
+    --tn-blue: #4A90E2;
+    --tn-green: #2e6e6a; /* High contrast, WCAG compliant teal green */
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Poppins', sans-serif; overflow-x: hidden; max-width: 100vw; }
+input:focus { outline: none !important; box-shadow: none !important; }
+
+/* Global Utilities Override */
+.p-4 { padding: 40px !important; }
+.pb-4 { padding-bottom: 40px !important; }
+.px-4 { padding-left: 40px !important; padding-right: 40px !important; }
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1920px;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
+
+/* === 2. Navigation & Header === */
+/* ── Navbar ── */
+.tn-logo-text { color: #215257 !important; }
+.tn-navbar { 
+    padding: 20px 0; 
+    transition: background 0.4s, backdrop-filter 0.4s; 
+}
+
+
+.tn-navbar .nav-item {
+    position: relative;
+}
+.tn-navbar .nav-link.active {
+    border-radius: 50rem;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    color: #212529 !important;
+    border: 1px solid #212529 !important;
+    background-color: var(--tn-primary) !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tn-navbar .nav-link.active:hover {
+    background-color: var(--tn-primary) !important;
+    color: #212529 !important;
+}
+
+/* ── Language Selector ── */
+.tn-lang-selector {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.tn-lang-selector img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.tn-navbar .nav-link,
+.tn-navbar .text-dark,
+.tn-navbar img,
+.tn-navbar .tn-lang-selector {
+    transition: color 0.4s ease, border-color 0.4s ease, filter 0.4s ease;
+}
+.tn-navbar.fixed-top:not(.bg-white).scrolled .tn-lang-selector {
+    border-color: #ffffff;
+}
+.tn-navbar.scrolled { 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.tn-navbar.fixed-top:not(.bg-white).scrolled {
+    background: #215257 !important; 
+    backdrop-filter: blur(12px); 
+}
+.tn-navbar.fixed-top:not(.bg-white).scrolled .tn-logo-text {
+    color: #ffffff !important;
+}
+.tn-navbar.fixed-top:not(.bg-white).scrolled .text-black,
+.tn-navbar.fixed-top:not(.bg-white).scrolled .text-dark,
+.tn-navbar.fixed-top:not(.bg-white).scrolled .nav-link:not(.active) {
+    color: #ffffff !important;
+}
+.tn-navbar.fixed-top:not(.bg-white).scrolled img[src*="logo.svg"],
+.tn-navbar.fixed-top:not(.bg-white).scrolled img[src*="bar.svg"] {
+    filter: brightness(0) invert(1) !important;
+}
+.tn-btn-primary { background: var(--tn-primary); color: var(--tn-dark); border: 1px solid #212529; border-radius: 50px; font-family: 'Poppins', sans-serif; transition: transform .25s; }
+.tn-btn-primary:hover { transform: translateY(-2px); background: var(--tn-primary); color: var(--tn-dark); border-color: #212529; }
+
+/* ── Hero ── */
+.tn-hero { min-height: 100vh; min-height: 100svh; padding-top: 80px; }
+.tn-slideshow { overflow: hidden; top: 80px !important; height: calc(100% - 80px) !important; }
+.tn-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity 1.5s ease; }
+.tn-slide.active { opacity: 1; }
+
+@media (max-width: 768px) {
+    .tn-hero { min-height: 70vh; padding-top: 70px; }
+    .tn-slideshow { top: 70px !important; height: calc(100% - 70px) !important; }
+}
+
+.tn-hero-text-container { display: grid; place-items: center; margin-bottom: 80px; }
+.tn-slide-text {
+    grid-area: 1 / 1;
+    font-size: clamp(2rem, 8.5vw, 8rem);
+    line-height: 1.1;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.5);
+    pointer-events: none;
+    margin: 0;
+}
+.tn-slide-text.active { opacity: 1; }
+
+/* === 3. Search Box & Tabs === */
+/* ── Search Box ── */
+.tn-search-box { box-shadow: 0 20px 60px rgb(0 0 0 / 6%); padding: 30px 40px !important; }
+.tn-search-tabs { border-radius: 15px 15px 0 0; gap: 6px; padding: 12px 40px 20px 40px !important; }
+.tn-tab { background: none; border: none; padding: 12px 28px; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 1rem; color: var(--tn-dark); border-radius: 10px; transition: all .25s; }
+.tn-tab.active { background: #215257; color: #fff; }
+.tn-field { height: 56px; background: #f8f9fa; border-color: #e0e0e0 !important; }
+.tn-field input { font-family: 'Poppins', sans-serif; font-size: .95rem; color: var(--tn-dark); }
+.tn-search-fields { display: none; }
+.tn-search-fields.active { display: flex !important; }
+
+.tn-search-btn { width: 270px !important; }
+@media (max-width: 991px) {
+    .tn-search-btn { padding: 15px 40px !important; width: 100% !important; }
+}
+
+/* Mobile tabs – icons only */
+@media (max-width: 640px) {
+    .tn-search-tabs { justify-content: space-between; width: 100%; box-sizing: border-box; }
+    .tab-label { display: none; }
+    .tn-tab { flex: 1; padding: 12px 0; font-size: 0; justify-content: center; }
+    .tn-tab i { font-size: 1.3rem; }
+    .tn-search-fields.active { flex-direction: column; }
+    .tn-field, .tn-btn-primary { width: 100%; max-width: 100%; }
+}
+
+/* === 4. Component Cards === */
+/* ── Gateway Cards ── */
+.tn-card { border-radius: 20px; overflow: hidden; border: none; transition: transform .3s; }
+.tn-card:hover { transform: translateY(-5px); }
+.tn-card-image { height: 220px; border-radius: 50px 50px 0 50px; overflow: hidden; }
+.tn-fav-btn { font-size: 1.2rem; color: #ccc !important; transition: color .3s; }
+.tn-fav-btn.active, .tn-fav-btn:hover { color: #ff4757 !important; }
+
+
+
+/* ── Destinations ── */
+.tn-dest-grid { display: flex; flex-direction: column; gap: 15px; }
+.tn-dest-row { display: flex; gap: 15px; height: 320px; }
+.tn-dest-card { position: relative; overflow: hidden; border-radius: 20px; flex-shrink: 0; }
+.tn-dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.tn-dest-card:hover img { transform: scale(1.05); }
+.tn-dest-large { flex: 2.5; }
+.tn-dest-small { flex: 1; }
+.tn-dest-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent); color: #fff; padding: 20px 18px 15px; }
+.tn-dest-overlay h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 5px; }
+.tn-dest-overlay p { font-size: .85rem; opacity: .9; margin: 0; }
+@media (max-width: 767px) {
+    .tn-dest-row { flex-direction: column; height: auto; }
+    .tn-dest-card { height: 200px !important; flex: none !important; width: 100% !important; }
+}
+
+/* === 9. Footer & Newsletter === */
+/* ── Newsletter ── */
+.tn-newsletter { 
+    background: #0099ab; 
+    outline: 1px solid rgb(0 0 0 / 28%); 
+    outline-offset: 3px; 
+    overflow: visible;
+}
+.tn-newsletter-img { height: 300px; max-height: 420px; object-fit: contain; position: absolute; bottom: 0; right: 40px; filter: drop-shadow(-10px 10px 30px rgba(0,0,0,.3)); z-index: 2; }
+.tn-btn-subscribe { background: var(--tn-dark); color: #fff; border: none; border-radius: 10px; font-family: 'Poppins', sans-serif; white-space: nowrap; }
+.tn-btn-subscribe:hover { transform: translateY(-2px); color: #fff; background: #333; }
+@media (max-width: 576px) {
+    .tn-btn-subscribe, .tn-newsletter .form-control { width: 100%; }
+}
+
+/* ── Footer ── */
+.tn-footer { background: #0f0f0f; }
+.tn-footer-link { color: rgba(255,255,255,.75); /* Increased contrast from .6 to meet WCAG guidelines */ text-decoration: none; transition: color .3s; }
+.tn-footer-link:hover { color: var(--tn-primary); }
+.tn-social-link { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.1); display: inline-flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: all .3s; }
+.tn-social-link:hover { background: var(--tn-primary); color: var(--tn-dark); }
+
+/* ── Header Logo ── */
+.tn-header-logo {
+    height: 55px !important;
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.1));
+}
+.tn-header-logo:hover {
+    transform: scale(1.08) rotate(-2deg);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.15));
+}
+
+/* ── Footer Logo ── */
+.tn-footer-logo {
+    height: 50px !important;
+    width: auto;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    filter: none;
+}
+
+/* ── Testimonial Avatar - Hidden ── */
+.tn-avatar-img { display: none !important; }
+.tn-footer-tagline {
+    font-family: 'Rock Salt', cursive;
+    font-size: 0.8rem;
+    color: var(--tn-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* === 8. Utility, Spacing & Contrast Overrides === */
+/* ── Inline Style Replacements ── */
+.tn-z-1000 { z-index: 1000; }
+.tn-max-w-1400 { max-width: 1920px; padding-left: 40px; padding-right: 40px; }
+.tn-container-1400 { max-width: 1400px !important; margin-left: auto !important; margin-right: auto !important; }
+.tn-invert-icon { filter: invert(1); }
+.tn-hover-zoom { transition: transform 0.4s ease; }
+.tn-hover-zoom:hover { transform: scale(1.03); }
+.tn-z-1-overflow-hidden { z-index: 1; overflow: hidden; }
+.tn-z-10-max-1400 { z-index: 10; max-width: 1920px; }
+.tn-search-box-container { max-width: 1920px; position: relative; }
+.tn-search-tabs-container { position: absolute; top: -52px; left: 0; }
+.tn-gateway-section {
+    background-image: url('images/bg_section.html');
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+.tn-main-card-img { height: 480px; object-fit: cover; }
+.tn-small-card-img { width: 60px; height: 60px; object-fit: cover; }
+.tn-fs-80 { font-size: 0.8rem; }
+.tn-progress-bar-container { height: 4px; width: 100%; background-color: #eee; overflow: hidden; border-radius: 2px; }
+.tn-progress-bar-inner { width: 40%; border-radius: 2px; }
+.tn-fs-75 { font-size: 0.75rem; }
+.tn-avatar-img { width: 56px; height: 56px; object-fit: cover; }
+
+/* ── Find Tour Replacements ── */
+.tn-find-tour-section {
+    background-image: url('images/bg_section.html');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    overflow: hidden;
+}
+/* Why Us Section */
+.tn-why-us-section {
+    background-color: #ffffff;
+}
+.tn-why-us-bg-img {
+    z-index: 0;
+    max-height: 65%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+/* Find Tour Form Wrapper */
+.tn-find-tour-form-wrapper {
+    background-color: #FDFBF7;
+    border-radius: 20px;
+    border: 1px solid #dee2e6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Find Tour Layout Setup */
+.tn-find-tour-layout {
+    gap: 40px;
+}
+.tn-find-tour-side-col {
+    width: 350px;
+    min-height: 480px;
+}
+.tn-find-tour-center-col {
+    max-width: 1200px; /* Applies to 1920px and smaller displays */
+}
+
+@media (min-width: 1921px) {
+    .tn-find-tour-center-col {
+        max-width: 1400px; /* Smooth transition for ultra-wide monitors */
+    }
+}
+
+@media (min-width: 2500px) {
+    .tn-find-tour-center-col {
+        max-width: 1840px; /* For massive 2500px+ displays */
+    }
+}
+.tn-why-us-grid {
+    --bs-gutter-x: 15px; /* Change this value to control horizontal space between boxes */
+    --bs-gutter-y: 15px; /* Change this value to control vertical space between boxes */
+}
+.tn-why-us-card {
+    /* Change the last value (34%) to control background transparency from 0% to 100% */
+    background-color: rgb(255 255 255 / 34%); 
+    /* Optional: adds a blur effect behind the transparent card. You can delete this line if you don't like it. */
+    backdrop-filter: blur(5px); 
+}
+.tn-find-tour-compass-img {
+    max-width: 330px;
+}
+.tn-find-tour-backpack-img {
+    max-width: 330px;
+}
+.tn-form-label-custom {
+    font-size: 0.95rem;
+    color: #1a2b4c;
+}
+.tn-form-input-custom {
+    border-color: #E6E8ED;
+    color: #4B5A74;
+    font-size: 0.95rem;
+    background-color: transparent;
+}
+.tn-search-tour-btn {
+    background-color: var(--tn-primary);
+    color: var(--tn-dark);
+    font-size: 1.1rem;
+    height: 60px;
+    transition: background-color 0.25s;
+    border: 1px solid #212529;
+}
+.tn-search-tour-btn:hover {
+    background-color: #e6c200;
+}
+.tn-arrow-circle {
+    width: 40px; 
+    height: 40px;
+    background-color: #fff;
+    color: var(--tn-primary);
+}
+
+@media (min-width: 1200px) {
+    .display-4 {
+        font-size: 3rem !important;}
+}
+
+/* =========================================
+   TESTIMONIAL SLIDER & DOTS
+   ========================================= */
+.tn-testimonial-slider {
+    position: relative;
+    width: 100%;
+    padding: 20px 0; /* Add padding so shadows/borders aren't cut off by overflow-hidden */
+}
+
+.tn-testimonial-track {
+    transition: transform 0.5s ease-in-out;
+    gap: 1.5rem; /* Matches Bootstrap g-4 equivalent spacing roughly */
+}
+
+/* Base mobile width: 1 card */
+.tn-review-card-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Tablet width: 2 cards */
+@media (min-width: 768px) {
+    .tn-review-card-wrapper {
+        flex: 0 0 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+    }
+}
+
+.tn-ticket-btn-select {
+    background-color: var(--tn-primary);
+    color: var(--tn-dark);
+    border: 1px solid #212529;
+    transition: all 0.2s ease-in-out;
+}
+
+.tn-ticket-btn-select:hover {
+    background-color: #1a2b3c;
+    color: #ffffff;
+    border: 1px solid #1a2b3c;
+}
+
+/* Desktop width: 3 cards */
+@media (min-width: 992px) {
+    .tn-review-card-wrapper {
+        flex: 0 0 calc(33.333333% - 1rem);
+        max-width: calc(33.333333% - 1rem);
+    }
+}
+
+/* =========================================
+   HOVER DROPDOWN MENU
+   ========================================= */
+@media (min-width: 992px) {
+    .tn-hover-dropdown:hover .dropdown-menu {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .tn-dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-top: 25px; /* Pushes dropdown down to navbar bottom line */
+    }
+}
+
+.tn-dropdown-menu {
+    border-radius: 12px;
+    padding: 0.5rem;
+    min-width: 240px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+/* Invisible bridge so hover state isn't lost when moving mouse across the gap */
+.tn-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+
+.tn-dropdown-menu .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 300;
+    color: #495057;
+    transition: all 0.2s ease;
+}
+
+.tn-dropdown-menu .dropdown-item:hover,
+.tn-dropdown-menu .dropdown-item:focus {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #000;
+    padding-left: 1.5rem; /* Shifts text to the right without moving the background box */
+}
+
+.tn-search-dropdown-menu {
+    border-radius: 12px;
+    padding: 0.5rem;
+    min-width: 240px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.tn-search-dropdown-menu .dropdown-item {
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 300;
+    color: #495057;
+    transition: all 0.2s ease;
+}
+
+.tn-search-dropdown-menu .dropdown-item:hover,
+.tn-search-dropdown-menu .dropdown-item:focus {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #000;
+    padding-left: 1.5rem;
+}
+
+/* === 6. Modals & Offcanvas === */
+/* ── Modals ── */
+.tn-modal .modal-content {
+    background-color: #fff;
+}
+.tn-modal .btn-close {
+    background-color: #fff;
+    opacity: 0.8;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+.tn-modal .btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.tn-modal .tn-form-control {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: #f8f9fa;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+.tn-modal .tn-form-control:focus {
+    background-color: #fff;
+    border-color: var(--tn-primary);
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.15);
+}
+.tn-modal .form-floating > label {
+    color: #6c757d;
+}
+.tn-modal .btn-outline-dark {
+    border-radius: 10px;
+    border-color: rgba(0,0,0,0.1);
+}
+.tn-modal .btn-outline-dark:hover {
+    background-color: #f8f9fa;
+    color: #000;
+    border-color: rgba(0,0,0,0.2);
+}
+
+/* ── Horizontal Scroll Container ── */
+.tn-horizontal-scroll {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.tn-horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* ── Team Card Social Links ── */
+.tn-horizontal-scroll .btn-outline-secondary:hover {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+}
+.tn-horizontal-scroll .btn-outline-secondary:hover i {
+    color: #000 !important;
+}
+
+/* Utillity Classes for Removing Inline Styles */
+.tn-logo-brightness { filter: brightness(0); }
+.tn-about-main { min-height: 50vh; background-color: #fff; padding-top: 81px; }
+.tn-max-w-1920-px-40 { max-width: 1920px; padding: 0 40px; margin: 0 auto; }
+.tn-about-hero-img { object-fit: cover; object-position: center 60%; max-height: 500px; min-height: 350px; }
+.tn-about-hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -1px; color: #215257; text-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+.tn-about-hero-stroke { -webkit-text-stroke: 1.5px #215257; }
+.tn-about-hero-desc {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #1a2b3c !important;
+    display: inline;
+    padding: 4px 8px;
+    text-shadow: none;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    line-height: 1.8;
+}
+.tn-breadcrumb-container { max-width: 1920px; padding: 15px 40px 0; margin: 0 auto; }
+.tn-breadcrumb-nav { --bs-breadcrumb-divider: '>'; }
+.tn-fs-sm { font-size: 0.85rem; }
+.tn-text-brand-dark { color: #215257; }
+.tn-gap-sm { gap: 0.8rem; }
+.tn-team-card { width: 290px; border-color: rgba(0,0,0,0.1) !important; }
+@media (min-width: 992px) {
+    .tn-team-card { width: 25%; }
+}
+.tn-team-img-container { height: 350px; padding: 3px 3px 0 3px; }
+.tn-team-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.tn-team-role { color: #b8860b; font-size: 0.75rem; }
+.tn-team-desc { font-size: 0.85rem; line-height: 1.6; }
+.tn-social-btn { width: 32px; height: 32px; padding: 0; }
+.tn-newsletter-form { padding-right: 40px; }
+.tn-modal-content { border-radius: 20px; }
+.tn-modal-img { object-fit: cover; min-height: 650px; }
+.tn-modal-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+.tn-text-primary { color: var(--tn-primary); }
+.tn-bg-light-gray { background-color: #f8f9fa; }
+.tn-modal-img-right { object-fit: cover; object-position: right center; min-height: 650px; }
+.tn-why-us-bg-right { right: 40px !important; margin-bottom: 40px; }
+.tn-why-us-bg-left { left: 40px !important; margin-bottom: 40px; }
+
+.tn-logo-font {
+    font-family: 'Rock Salt', cursive !important;
+}
+
+@media (min-width: 1200px) {
+    .fs-4 {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* Custom Destinations Styles */
+.tn-sort-select {
+    width: auto;
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.tn-card-img {
+    height: 400px;
+}
+
+.tn-icon-btn {
+    width: 38px;
+    height: 38px;
+}
+
+.tn-page-btn {
+    width: 40px;
+    height: 40px;
+}
+
+.tn-fs-xs {
+    font-size: 0.70rem;
+}
+
+.tn-mt-2rem {
+    margin-top: 2rem !important;
+}
+
+.tn-search-contour {
+    border: 0.8px solid #ced4da;
+}
+
+/* === 7. Form Inputs === */
+.tn-color-green {
+    color: var(--tn-green) !important;
+}
+
+.tn-bg-green {
+    background-color: var(--tn-green) !important;
+}
+
+/* Hover Zoom */
+.tn-hover-zoom img {
+    transition: transform 0.5s ease;
+}
+.tn-hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Radio */
+.tn-custom-radio input[type="radio"]:checked {
+    background-color: var(--tn-green);
+    border-color: var(--tn-green);
+}
+
+/* Range slider custom green */
+.form-range::-webkit-slider-thumb {
+    background: var(--tn-green);
+}
+.form-range::-moz-range-thumb {
+    background: var(--tn-green);
+}
+.form-range::-ms-thumb {
+    background: var(--tn-green);
+}
+
+/* Pagination active background */
+.pagination .page-item.active .page-link {
+    background-color: var(--tn-green) !important;
+    border-color: var(--tn-green) !important;
+    color: #fff !important;
+}
+
+.tn-price-color {
+    color: #215257 !important;
+}
+
+/* Custom Multi-Range Slider */
+.tn-multi-range {
+    position: relative;
+    height: 24px;
+}
+.tn-multi-range-track {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #e9ecef;
+    top: 10px;
+    border-radius: 2px;
+}
+.tn-multi-range-active {
+    position: absolute;
+    height: 4px;
+    background-color: var(--tn-green);
+    top: 10px;
+    border-radius: 2px;
+    left: 0%;
+    right: 0%;
+}
+.tn-multi-range input[type=range] {
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    background: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    margin: 0;
+    z-index: 3;
+}
+.tn-multi-range input[type=range]::-webkit-slider-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid var(--tn-green);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #fff;
+    margin-top: -6px; /* align center with track */
+}
+.tn-multi-range input[type=range]::-moz-range-thumb {
+    pointer-events: auto;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid var(--tn-green);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #fff;
+}
+
+/* Hide native datepicker calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* === 5. Flight Ticket Design & Custom Ticket Component === */
+/* =========================================
+   FLIGHT TICKET DESIGN
+   ========================================= */
+.tn-flight-ticket {
+    display: flex;
+    position: relative;
+    border-radius: 1.25rem;
+    background: #ffffff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s;
+}
+
+.tn-flight-ticket::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid #ced4da;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.tn-flight-ticket:hover {
+    transform: translateY(-4px);
+}
+
+.tn-flight-ticket .fw-bold {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+}
+
+.tn-ticket-sidebar {
+    background-color: #1a2b3c;
+    width: 100px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    color: #ffffff;
+    z-index: 2;
+    border-radius: 1.25rem 0 0 1.25rem;
+}
+
+.tn-ticket-sidebar-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    margin: auto 0;
+    text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+    .tn-sidebar-plane-icon {
+        margin-top: 1.2rem;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+.tn-ticket-main {
+    flex-grow: 1;
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tn-ticket-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 95%;
+    object-fit: cover;
+    object-position: right center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%);
+    mask-image: linear-gradient(to right, transparent 0%, black 50%);
+    z-index: 0;
+    opacity: 0.95;
+}
+
+.tn-ticket-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tn-ticket-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #719958;
+    color: #719958;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.tn-ticket-badge-filled {
+    background-color: #719958;
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.tn-ticket-airport {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #1a2b3c;
+    letter-spacing: 1px;
+}
+
+.tn-ticket-dashed-line {
+    border-bottom: 2px dashed #d1d5db;
+    width: 100%;
+    position: relative;
+}
+
+.tn-ticket-dashed-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 0 35px 0 10px;
+    color: #719958;
+    font-size: 1.5rem;
+}
+
+.tn-ticket-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a2b3c;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.tn-ticket-value {
+    font-family: 'Oswald', sans-serif;
+    color: #719958;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.tn-ticket-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    color: #1a2b3c;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.tn-ticket-price-cents {
+    font-size: 1.25rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.tn-ticket-info-item {
+    padding-right: 1.5rem;
+    border-right: 1px solid rgba(0,0,0,0.08);
+}
+.tn-ticket-info-item:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.tn-ticket-bottom-bar {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tn-ticket-divider {
+    position: relative;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, transparent 0, transparent 6px, #e5e7eb 6px, #e5e7eb 12px);
+    z-index: 10;
+}
+
+.tn-ticket-divider::before, .tn-ticket-divider::after {
+    content: '';
+    position: absolute;
+    left: -11px;
+    width: 24px;
+    height: 24px;
+    background-color: #f4f6f8; /* matches main bg */
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+}
+.tn-ticket-divider::before {
+    top: -12px;
+    box-shadow: inset 0 -3px 5px rgba(0,0,0,0.02);
+    clip-path: polygon(-50% 50%, 150% 50%, 150% 150%, -50% 150%);
+}
+.tn-ticket-divider::after {
+    bottom: -12px;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.02);
+    clip-path: polygon(-50% -50%, 150% -50%, 150% 50%, -50% 50%);
+}
+
+.tn-ticket-stub {
+    width: 310px !important;
+    flex-shrink: 0;
+    padding: 2rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    border-radius: 0 1.25rem 1.25rem 0;
+}
+
+.tn-ticket-barcode {
+    width: 100%;
+    height: 30px;
+    background-image: repeating-linear-gradient(to right, #1a2b3c 0, #1a2b3c 2px, transparent 2px, transparent 4px, #1a2b3c 4px, #1a2b3c 5px, transparent 5px, transparent 8px, #1a2b3c 8px, #1a2b3c 11px, transparent 11px, transparent 13px, #1a2b3c 13px, #1a2b3c 16px, transparent 16px, transparent 18px);
+    margin-bottom: 0.25rem;
+}
+
+.tn-ticket-stub-dashed {
+    border-bottom: 1px dashed #e5e7eb;
+    margin: 1.25rem 0;
+}
+
+@media (max-width: 991px) {
+    .tn-flight-ticket {
+        flex-direction: column;
+    }
+    .tn-ticket-sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 1rem 2rem;
+        justify-content: space-between;
+        border-radius: 1.25rem 1.25rem 0 0;
+    }
+    .tn-ticket-sidebar-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+    .tn-ticket-bg {
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 50%);
+    }
+    .tn-ticket-divider {
+        width: 100%;
+        height: 2px;
+        background: repeating-linear-gradient(to right, transparent 0, transparent 6px, #e5e7eb 6px, #e5e7eb 12px);
+    }
+    .tn-ticket-divider::before, .tn-ticket-divider::after {
+        top: -11px;
+        left: auto;
+    }
+    .tn-ticket-divider::before {
+        left: -12px;
+        box-shadow: inset -3px 0 5px rgba(0,0,0,0.02);
+        clip-path: polygon(50% -50%, 150% -50%, 150% 150%, 50% 150%);
+    }
+    .tn-ticket-divider::after {
+        right: -12px;
+        box-shadow: inset 3px 0 5px rgba(0,0,0,0.02);
+        clip-path: polygon(-50% -50%, 50% -50%, 50% 150%, -50% 150%);
+    }
+    .tn-ticket-stub {
+        border-radius: 0 0 1.25rem 1.25rem;
+    }
+    .tn-ticket-stub {
+        width: 100% !important;
+        padding: 1.5rem 2rem;
+    }
+    .tn-ticket-info-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .tn-ticket-info-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .tn-ticket-bottom-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* --- Extracted Inline Styles --- */
+.tn-btn-circle-28 { width: 28px; height: 28px; }
+.tn-swap-btn-desktop { width: 32px; height: 32px; right: -20px; top: 50%; transform: translateY(-50%); z-index: 5; }
+.tn-swap-btn-mobile { width: 32px; height: 32px; bottom: -20px; left: 50%; transform: translateX(-50%); z-index: 5; }
+.tn-rotate-90 { transform: rotate(90deg); }
+.tn-rotate-minus-45 { transform: rotate(-45deg); }
+.tn-rotate-minus-15 { transform: rotate(-15deg); }
+.tn-economy-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; }
+.tn-max-w-70 { max-width: 65%; }
+.tn-min-w-150 { min-width: 150px; }
+.tn-hr-divider { opacity: 0.1; margin-bottom: 2rem !important; }
+.tn-color-accent { color: #719958; }
+.tn-vertical-divider { width: 1px; height: 30px; background: #e5e7eb; }
+.tn-fs-105 { font-size: 1.05rem; }
+.tn-dashed-flex-grow { border-bottom: 1px dashed #d1d5db; flex-grow: 1; }
+.tn-fs-110 { font-size: 1.1rem; }
+.tn-map-iframe { border: 0; border-radius: 0.75rem; }
+.tn-min-w-250 { min-width: 250px; }
+
+.text-white-50 {
+    color: rgb(255 255 255 / 82%) !important;
+}
+
+/* Custom Warning Text Contrast Override for Light Backgrounds */
+body .text-warning {
+    color: #b8860b !important; /* Dark goldenrod/amber for WCAG compliance */
+}
+/* Keep standard light warning yellow for dark backgrounds, hero slideshow, rating stars, and hero subpage stroke headers */
+.bg-dark .text-warning,
+.tn-bg-dark .text-warning,
+[data-bs-theme="dark"] .text-warning,
+.tn-footer .text-warning,
+.text-bg-dark .text-warning,
+.tn-hero .text-warning,
+.tn-review-card .text-warning,
+#starsContainer,
+.text-warning .fa-star,
+.text-warning .fa-star-half-alt,
+.text-warning .far.fa-star,
+body .tn-about-hero-stroke,
+body .text-warning.tn-about-hero-stroke {
+    color: #ffc107 !important;
+}
+
+/* Muted & Secondary Text Contrast Overrides for Light Backgrounds */
+body .text-muted, body .text-secondary {
+    color: #5c636a !important; /* Darker grey with >4.5:1 contrast ratio against light backgrounds */
+}
+/* Keep standard light gray for dark backgrounds */
+.bg-dark .text-muted, .tn-bg-dark .text-muted, [data-bs-theme="dark"] .text-muted,
+.bg-dark .text-secondary, .tn-bg-dark .text-secondary, [data-bs-theme="dark"] .text-secondary,
+.tn-footer .text-muted, .tn-footer .text-secondary {
+    color: #adb5bd !important;
+}
+
+/* Standardized Section Padding for Design Consistency */
+.tn-section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Eliminate double padding when sections are adjacent */
+.tn-section + .tn-section {
+    padding-top: 0 !important;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: #1a2b3c;
+}
+.dropdown-item.active:hover, .dropdown-item.active:focus,
+.tn-dropdown-menu .dropdown-item.active:hover,
+.tn-dropdown-menu .dropdown-item.active:focus {
+    color: #000000 !important;
+    background-color: rgba(255, 193, 7, 0.15) !important;
+}
+
+.form-check-input:checked {
+    background-color: #1a2b3c;
+    border-color: #1a2b3c;
+}
+
+/* Fix focus state colors for form switch (unchecked) */
+.form-switch .form-check-input:focus:not(:checked) {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    border-color: #adb5bd;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+/* Fix focus state colors for form switch (checked) */
+.form-check-input:checked:focus {
+    box-shadow: 0 0 0 0.25rem rgba(26, 43, 60, 0.25);
+}
+
+
+/* Custom utility classes */
+.tn-amenity-btn {
+    width: 28px;
+    height: 28px;
+}
+.tn-amenity-btn i {
+    font-size: 12px;
+}
+.form-switch .form-check-input {
+    width: 3em;
+    height: 1.8rem;
+}
+
+.tn-newsletter-wrapper {
+    position: relative;
+}
+
+.tn-newsletter-wrapper .form-control {
+    padding-right: 140px;
+    height: 52px;
+}
+
+.tn-newsletter-btn-inside {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 1200px) {
+    .display-5 {
+        font-size: 2.6rem;
+    }
+}
+
+/* ==========================================================
+   ATTRACTION CARD STYLES
+   ========================================================== */
+.tn-attraction-card {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-radius: 1.25rem;
+    background: #ffffff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.04);
+    border: 1px solid #ced4da;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tn-attraction-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 992px) {
+    .border-start-lg {
+        border-left: 1px solid #dee2e6 !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .tn-attraction-card {
+        flex-direction: column;
+    }
+    .tn-attraction-card > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 250px !important;
+    }
+}
+
+/* ── Slideshow Indicators ── */
+.tn-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    outline: none;
+}
+
+.tn-indicator-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.tn-indicator-dot.active {
+    background-color: var(--tn-primary);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* === 10. Maps & Third-Party Library Integration (Leaflet) === */
+/* ── Leaflet map dark styling to match Contact page map ── */
+.leaflet-tile {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}
+
+.leaflet-container {
+    background-color: #1a1a1a !important; /* Matches dark map background */
+}
+
+/* ── Universal Font Weight Override (Light 300) ── */
+*:not(i):not([class*="fa-"]):not(strong):not(b):not(.fw-bold):not(.fw-semibold):not(.fw-medium):not(.tn-slide-text):not(.tn-slide-text *):not(.tn-about-hero-title):not(.tn-about-hero-title *):not(.tn-about-hero-stroke):not(.tn-about-hero-stroke *):not(.tn-flight-ticket):not(.tn-flight-ticket *):not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.fw-bold *):not(.fw-semibold *):not(.fw-medium *):not(strong *):not(b *) {
+    font-weight: 300 !important;
+}
+
+/* ── Extracted Inline Styles ── */
+.tn-w-24 { width: 24px; }
+.tn-flag-avatar { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+.tn-aspect-16-10 { aspect-ratio: 16/10; }
+.tn-letter-space-05 { letter-spacing: 0.5px; }
+.tn-w-30 { width: 30px; }
+.tn-mobile-account-toggle { width: 30px; justify-content: flex-end; }
+.tn-gap-2rem { gap: 2rem; }
+.tn-offcanvas-w-350 { width: 350px; }
+.tn-user-avatar { width: 50px; height: 50px; object-fit: cover; }
+.tn-logout-btn { border: 1px solid #ced4da; color: #6c757d; }
+.tn-eticket-badge { background-color: #215257; font-weight: 500; padding: 0.4em 0.8em; font-size: 0.75rem; }
+.tn-shadow-none { box-shadow: none !important; }
+.tn-w-20 { width: 20px; }
+.tn-map-col { width: 100%; height: 220px; z-index: 1; }
+.tn-w-45-h-45 { width: 45px; height: 45px; }
+.tn-social-link-icon { width: 40px; height: 40px; text-decoration: none; }
+.tn-w-50-h-50 { width: 50px; height: 50px; }
+.tn-transition-transform-color { transition: transform 0.2s ease, color 0.2s ease; }
+.tn-w-25pc { width: 25%; }
+.tn-sticky-sidebar-top { top: 100px; z-index: 10; }
+.tn-btn-accent-important { background: #ffc107 !important; border: 1px solid #212529 !important; color: #1a1a1a !important; }
+.tn-cursor-pointer { cursor: pointer; }
+.tn-why-us-gutter-mb { --bs-gutter-x: 20px; --bs-gutter-y: 20px; margin-bottom: 20px; }
+.tn-card-img-pad-height { padding: 2px; height: 400px; }
+.tn-dark-map-iframe { border: 0; filter: invert(100%) hue-rotate(180deg) contrast(90%); }
+.tn-max-h-250-scroll { max-height: 250px; overflow-y: auto; }
+.tn-max-w-400 { max-width: 400px; }
+.tn-invert-logo { filter: brightness(0) invert(1); }
+.tn-max-w-320 { max-width: 320px; }
+.tn-min-w-50 { min-width: 50px; }
+.tn-pb-60 { padding-bottom: 60px; }
+.tn-w-16-h-16 { width: 16px; height: 16px; }
+.tn-w-18-h-18 { width: 18px; height: 18px; }
+.tn-w-14-h-14 { width: 14px; height: 14px; }
+
+/* === 11. Media Queries & Custom Breakpoints (Ultra-Wide Screens) === */
+/* Custom Breakpoint for Ultra-Wide Screens (>= 2350px) */
+@media (min-width: 2350px) {
+    /* Expand container to full width */
+    .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm, .tn-max-w-1400, .tn-breadcrumb-container, .tn-z-10-max-1400, .tn-find-tour-center-col, .tn-search-box-container {
+        max-width: 100% !important;
+    }
+    
+    /* Custom Grid for xxxl */
+    .col-xxxl-1 { flex: 0 0 auto; width: 8.33333333%; }
+    .col-xxxl-2 { flex: 0 0 auto; width: 16.66666667%; }
+    .col-xxxl-3 { flex: 0 0 auto; width: 25%; }
+    .col-xxxl-4 { flex: 0 0 auto; width: 33.33333333%; }
+    .col-xxxl-5 { flex: 0 0 auto; width: 41.66666667%; }
+    .col-xxxl-6 { flex: 0 0 auto; width: 50%; }
+    .col-xxxl-7 { flex: 0 0 auto; width: 58.33333333%; }
+    .col-xxxl-8 { flex: 0 0 auto; width: 66.66666667%; }
+    .col-xxxl-9 { flex: 0 0 auto; width: 75%; }
+    .col-xxxl-10 { flex: 0 0 auto; width: 83.33333333%; }
+    .col-xxxl-11 { flex: 0 0 auto; width: 91.66666667%; }
+    .col-xxxl-12 { flex: 0 0 auto; width: 100%; }
+
+    /* Display utilities */
+    .d-xxxl-none { display: none !important; }
+    .d-xxxl-block { display: block !important; }
+    .d-xxxl-flex { display: flex !important; }
+
+    /* Component adjustments */
+    .tn-ticket-stub { width: 390px !important; }
+
+    .tn-team-card { width: 21%; }
+}
+
+@media (max-width: 2349.98px) {
+    /* To ensure elements that should only appear on xxxl are hidden otherwise */
+    .d-xxxl-only {
+        display: none !important;
+    }
+}
+
+/* iMac and other wide displays layout constraints */
+@media (min-width: 2000px) {
+    .tn-find-tour-center-col {
+        width: 1700px !important;
+        max-width: 1700px !important;
+    }
+}
+
+/* ── Spacing Between Description Text and Starting Content (Listing Pages) ── */
+.tn-about-main > section:first-of-type + *:not(.tn-section) {
+    margin-top: 80px !important;
+}
+@media (min-width: 2350px) {
+    .tn-about-main > section:first-of-type + div.d-xxxl-none + section {
+        margin-top: 80px !important;
+        display: flow-root;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================
+   WhatsApp Floating Chat Widget
+   ========================================================== */
+.tn-wa-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tn-wa-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: tn-wa-pulse 2s infinite;
+}
+.tn-wa-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes tn-wa-pulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.6); }
+}
+
+/* Popup */
+.tn-wa-popup {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s ease;
+}
+.tn-wa-popup.tn-wa-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.tn-wa-popup-header {
+    background: #075e54;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.tn-wa-popup-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    padding: 4px;
+}
+.tn-wa-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+}
+.tn-wa-close:hover { opacity: 1; }
+
+.tn-wa-popup-body {
+    background: #e5ddd5;
+    padding: 16px;
+    min-height: 100px;
+}
+.tn-wa-msg {
+    background: #fff;
+    border-radius: 0 8px 8px 8px;
+    padding: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    position: relative;
+}
+.tn-wa-msg p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.5;
+}
+.tn-wa-time {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.7rem;
+    color: #999;
+    text-align: right;
+}
+
+.tn-wa-popup-footer {
+    background: #fff;
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+}
+.tn-wa-send-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25d366;
+    color: #fff;
+    border-radius: 24px;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+.tn-wa-send-btn:hover { background: #1da851; color: #fff; }
+
+.tn-wa-call-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 24px;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+.tn-wa-call-btn:hover { background: #e0e0e0; color: #333; }
+
+@media (max-width: 400px) {
+    .tn-wa-popup { width: 280px; right: -8px; }
+}
+
+
+/* ==========================================================
+   Scroll Animations & Effects
+   ========================================================== */
+
+/* ── Reveal animations ── */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal="fade-left"] { transform: translateX(-30px); }
+[data-reveal="fade-right"] { transform: translateX(30px); }
+[data-reveal="zoom"] { transform: scale(0.9); }
+
+[data-reveal].tn-revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* ── Navbar shrink on scroll ── */
+.tn-navbar-scrolled {
+    padding: 10px 0 !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,.08);
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+.tn-navbar-scrolled .tn-header-logo {
+    height: 42px !important;
+    transition: height 0.3s ease;
+}
+
+/* ── Back to top button ── */
+.tn-back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--tn-primary);
+    color: #212529;
+    border: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9990;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+.tn-back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.tn-btt-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ── Card hover lift effect ── */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.1) !important;
+}
+
+/* ── Service cards hover ── */
+.tn-find-tour-section .rounded-4.border {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tn-find-tour-section .rounded-4.border:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    border-color: var(--tn-primary) !important;
+}
+
+/* ── Button press effect ── */
+.btn {
+    transition: all 0.2s ease;
+}
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* ── CTA section pulse glow ── */
+.tn-newsletter {
+    animation: tn-cta-glow 3s ease-in-out infinite alternate;
+}
+@keyframes tn-cta-glow {
+    from { box-shadow: 0 8px 30px rgba(0,0,0,.2); }
+    to { box-shadow: 0 8px 40px rgba(255,193,7,.2); }
+}
+
+
+
+}

@@ -1,274 +1,266 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Travel Gallery — Siya World Holidays</title>
-  <meta name="description" content="A visual journey through destinations our travellers have explored with Siya World Holidays — from beaches and mountains to heritage and cities.">
-  <meta name="keywords" content="travel gallery, travel photos, Siya World Holidays photos">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery — Siya World Holidays</title>
+    <meta name="description" content="A visual journey through destinations our travellers have explored with Siya World Holidays.">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tn-gallery-item { position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .tn-gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease, filter 0.5s ease; }
+        .tn-gallery-item:hover img { transform: scale(1.1); filter: brightness(0.65); }
+        .tn-gallery-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .tn-gallery-item:hover .tn-gallery-overlay { opacity: 1; }
+        .tn-gallery-overlay i { font-size: 2rem; color: #fff; background: rgba(255,193,7,0.85); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        @media (min-width: 992px) { .tn-gallery-item img { height: 250px; } }
 
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/logo.png" rel="apple-touch-icon">
+        /* Staggered scroll reveal for gallery */
+        .tn-gal-item { opacity: 0; transform: translateY(40px) scale(0.95); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .tn-gal-item.tn-gal-visible { opacity: 1; transform: translateY(0) scale(1); }
 
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <script src="assets/js/header-loader.js"></script>
+        /* Parallax-style scroll on gallery hero */
+        .tn-gallery-hero-wrap { position: relative; overflow: hidden; height: 350px; }
+        .tn-gallery-hero-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.1s linear; }
+        @media (min-width: 768px) { .tn-gallery-hero-wrap { height: 420px; } }
+    </style>
 </head>
+<body>
 
-<body class="gallery-page">
+    <div id="header-placeholder"></div>
 
-  <div id="header-placeholder"></div>
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="tn-about-main">
+        <!-- Hero -->
+        <div class="position-relative w-100">
+            <div class="tn-gallery-hero-wrap position-relative">
+                <img src="images/long/3rd-long_2.png" alt="Gallery" class="w-100" id="galleryHeroImg">
+                <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
+                    <h1 class="fw-bold mb-3 tn-about-hero-title">
+                        Travel <span class="text-warning tn-about-hero-stroke">Gallery</span>
+                    </h1>
+                    <p class="text-muted fs-5 mb-0 mx-auto tn-about-hero-desc">
+                        Moments captured by our travellers across the globe — click any image to view full size.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-  <main class="main">
+        <!-- Breadcrumbs -->
+        <div class="tn-breadcrumb-container">
+            <nav class="tn-breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 tn-fs-sm">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-secondary fw-medium">Home</a></li>
+                    <li class="breadcrumb-item active text-dark fw-medium" aria-current="page">Gallery</li>
+                </ol>
+            </nav>
+        </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero text-center" data-aos="fade">
-      <div class="container">
-        <h1>Travel Gallery</h1>
-        <p>Moments captured by our travellers across the globe — click any image to view full size.</p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Gallery</li>
-          </ol>
-        </nav>
-      </div>
-    </section>
+        <!-- Gallery Section -->
+        <section class="tn-section">
+            <div class="container-xl px-4">
+                <div class="text-center mb-5">
+                    <div class="d-inline-flex align-items-center justify-content-center text-warning fw-semibold mb-2 fs-5">
+                        <i class="fas fa-camera me-2"></i> <span>Our Journeys</span>
+                    </div>
+                    <h2 class="fw-bold display-6 tn-logo-text">Browse Travel <span class="text-warning">Moments</span></h2>
+                    <p class="text-muted">Real photos from real trips — beaches, mountains, heritage and cities.</p>
+                </div>
 
-    <!-- Gallery Swiper Strip -->
-    <section class="section tight">
-      <div class="container">
-        <h3 class="subhead center" data-aos="fade-up">Highlights</h3>
+                <!-- Gallery Grid - Simple responsive grid, no filters -->
+                <div class="row g-3" id="galleryGrid">
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/1.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/1.jpeg" alt="Maldives Beach" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/2.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/2.jpeg" alt="Dubai Skyline" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/3.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/3.jpeg" alt="Kashmir Valley" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/4.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/4.jpeg" alt="Thailand Beach" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/5.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/5.jpeg" alt="Singapore" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/6.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/6.jpeg" alt="Bali Temple" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/7.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/7.jpeg" alt="Rajasthan Fort" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/9.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/9.jpeg" alt="Goa Beach" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/10.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/10.jpeg" alt="Nepal Himalayas" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/11.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/11.jpeg" alt="Himachal Snow" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/12.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/12.jpeg" alt="Japan Cherry Blossoms" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/13.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/13.jpeg" alt="Maldives Overwater" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/14.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/14.jpeg" alt="Indian Heritage" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/15.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/15.jpeg" alt="International Trip" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/16.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/16.jpeg" alt="Mountain Trek" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/17.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/17.jpeg" alt="Beach Sunset" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/18.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/18.jpeg" alt="City Tour" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/19.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/19.jpeg" alt="Domestic Trip" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/20.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/20.jpeg" alt="Island Paradise" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 tn-gal-item">
+                        <a href="images/gallery/21.jpeg" class="glightbox tn-gallery-item d-block" data-gallery="gallery1">
+                            <img src="images/gallery/21.jpeg" alt="Hill Station" loading="lazy">
+                            <div class="tn-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </a>
+                    </div>
+                </div><!-- end row -->
 
-        <div class="gallery-strip swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
-          <script type="application/json" class="swiper-config">
-          {
-            "loop": true,
-            "speed": 600,
-            "autoplay": { "delay": 3500 },
-            "slidesPerView": "auto",
-            "spaceBetween": 20,
-            "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true },
-            "breakpoints": {
-              "320":  { "slidesPerView": 1, "spaceBetween": 16 },
-              "576":  { "slidesPerView": 2, "spaceBetween": 18 },
-              "992":  { "slidesPerView": 3, "spaceBetween": 20 },
-              "1200": { "slidesPerView": 4, "spaceBetween": 24 }
+                <!-- CTA -->
+                <div class="text-center mt-5 p-5 rounded-4 bg-light position-relative overflow-hidden">
+                    <img src="images/slide3.jpg" alt="" class="position-absolute d-none d-lg-block rounded-3" style="left: 20px; top: 50%; transform: translateY(-50%); width: 220px; height: 200px; object-fit: cover; opacity: 0.85;">
+                    <img src="images/slide4.jpg" alt="" class="position-absolute d-none d-lg-block rounded-3" style="right: 20px; top: 50%; transform: translateY(-50%); width: 220px; height: 200px; object-fit: cover; opacity: 0.85;">
+                    <h3 class="fw-bold tn-text-brand-dark mb-2">Ready to make your own memories?</h3>
+                    <p class="text-muted mb-4">Pick a destination, tell us your dates and we'll send back a custom itinerary within 24 hours.</p>
+                    <a href="contact.html" class="btn btn-warning px-5 py-3 fw-semibold text-dark rounded-pill">
+                        <i class="fas fa-envelope me-2"></i> Plan My Trip
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+<script src="js/animations.js"></script>
+<script src="js/protect.js"></script>
+<script src="js/includes.js"></script>
+<script>
+(function() {
+    'use strict';
+
+    // Staggered scroll reveal for gallery items
+    function initGalleryReveal() {
+        var items = document.querySelectorAll('.tn-gal-item');
+        if (!items.length) return;
+
+        // Remove the default data-reveal to avoid double animation
+        items.forEach(function(el) { el.removeAttribute('data-reveal'); });
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var index = Array.from(items).indexOf(el);
+                    var stagger = (index % 4) * 120; // stagger per row position
+                    setTimeout(function() {
+                        el.classList.add('tn-gal-visible');
+                    }, stagger);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        items.forEach(function(el) { observer.observe(el); });
+    }
+
+    // Parallax scroll on gallery hero
+    function initGalleryParallax() {
+        var heroImg = document.getElementById('galleryHeroImg');
+        if (!heroImg) return;
+
+        window.addEventListener('scroll', function() {
+            var scrolled = window.pageYOffset;
+            if (scrolled < 600) {
+                heroImg.style.transform = 'translateY(' + (scrolled * 0.35) + 'px) scale(1.05)';
             }
-          }
-          </script>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><a href="assets/img/travel/1.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/1.jpeg" alt="Travel 1" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/2.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/2.jpeg" alt="Travel 2" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/3.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/3.jpeg" alt="Travel 3" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/4.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/4.jpeg" alt="Travel 4" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/5.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/5.jpeg" alt="Travel 5" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/6.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/6.jpeg" alt="Travel 6" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/7.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/7.jpeg" alt="Travel 7" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/8.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/8.jpeg" alt="Travel 8" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/9.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/9.jpeg" alt="Travel 9" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-            <div class="swiper-slide"><a href="assets/img/travel/10.jpeg" class="glightbox gallery-card" data-gallery="strip"><img src="assets/img/travel/10.jpeg" alt="Travel 10" loading="lazy"><div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div></a></div>
-          </div>
-          <div class="swiper-pagination" style="position: relative; margin-top: 1.5rem;"></div>
-        </div>
-      </div>
-    </section>
+        }, { passive: true });
+    }
 
-    <!-- Filtered Gallery Grid -->
-    <section class="section bg-cream">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow" style="margin-left:auto;margin-right:auto;">Full collection</span>
-          <h2>Browse all travel moments</h2>
-          <div class="divider-gold mt-3"></div>
-        </div>
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="isotope-filters" data-aos="fade-up">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-international">International</li>
-            <li data-filter=".filter-domestic">Domestic</li>
-            <li data-filter=".filter-beaches">Beaches</li>
-            <li data-filter=".filter-mountains">Mountains</li>
-          </ul>
-
-          <div class="row g-3 g-md-4 isotope-container" data-aos="fade-up" data-aos-delay="150">
-
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-beaches">
-              <a href="assets/img/travel/1.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/1.jpeg" alt="Travel Photo 1" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/2.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/2.jpeg" alt="Travel Photo 2" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic filter-mountains">
-              <a href="assets/img/travel/3.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/3.jpeg" alt="Travel Photo 3" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-beaches">
-              <a href="assets/img/travel/4.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/4.jpeg" alt="Travel Photo 4" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/5.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/5.jpeg" alt="Travel Photo 5" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/6.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/6.jpeg" alt="Travel Photo 6" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic">
-              <a href="assets/img/travel/7.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/7.jpeg" alt="Travel Photo 7" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic">
-              <a href="assets/img/travel/8.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/8.jpeg" alt="Travel Photo 8" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-beaches">
-              <a href="assets/img/travel/9.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/9.jpeg" alt="Travel Photo 9" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-mountains">
-              <a href="assets/img/travel/10.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/10.jpeg" alt="Travel Photo 10" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic filter-mountains">
-              <a href="assets/img/travel/11.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/11.jpeg" alt="Travel Photo 11" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/12.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/12.jpeg" alt="Travel Photo 12" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-beaches">
-              <a href="assets/img/travel/13.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/13.jpeg" alt="Travel Photo 13" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic">
-              <a href="assets/img/travel/14.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/14.jpeg" alt="Travel Photo 14" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/15.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/15.jpeg" alt="Travel Photo 15" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic filter-mountains">
-              <a href="assets/img/travel/16.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/16.jpeg" alt="Travel Photo 16" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-beaches">
-              <a href="assets/img/travel/17.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/17.jpeg" alt="Travel Photo 17" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international">
-              <a href="assets/img/travel/18.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/18.jpeg" alt="Travel Photo 18" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic">
-              <a href="assets/img/travel/19.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/19.jpeg" alt="Travel Photo 19" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-international filter-beaches">
-              <a href="assets/img/travel/20.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/20.jpeg" alt="Travel Photo 20" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-            <div class="col-xl-3 col-md-4 col-sm-6 isotope-item filter-domestic filter-mountains">
-              <a href="assets/img/travel/21.jpeg" class="glightbox gallery-card" data-gallery="grid">
-                <img src="assets/img/travel/21.jpeg" alt="Travel Photo 21" loading="lazy">
-                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row" style="margin-top: 4rem;">
-          <div class="col-12" data-aos="fade-up">
-            <div class="cta-section-inline">
-              <h3>Ready to make your own memories?</h3>
-              <p>Pick a destination, tell us your dates and we'll send back a custom itinerary within 24 hours.</p>
-              <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary"><i class="bi bi-envelope"></i> Plan My Trip</a>
-                <a href="tours.html" class="btn btn-outline">Browse Tours</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
+    document.addEventListener('DOMContentLoaded', function() {
+        initGalleryReveal();
+        initGalleryParallax();
+    });
+})();
+</script>
 </body>
-
 </html>

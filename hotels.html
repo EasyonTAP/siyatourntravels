@@ -1,0 +1,1637 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels - Siya World Holidays</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="../../unpkg.com/leaflet%401.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg tn-navbar fixed-top w-100 bg-white tn-z-1000" id="mainNavbar">
+        <div class="container-fluid px-4 mx-auto tn-max-w-1400 d-flex align-items-center justify-content-between">
+            <!-- Left: Mobile Menu Toggler (hidden on desktop) -->
+            <button class="navbar-toggler border-0 p-0 order-1 d-lg-none tn-w-30" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-3 text-dark"></i>
+            </button>
+
+            <!-- Center: Logo (centered on mobile, standard left on desktop) -->
+            <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4 tn-logo-text order-2 mx-lg-0 mx-auto" href="index.html">
+                <img src="images/siya-logo.png" alt="Siya World Holidays Logo" height="50" class="tn-header-logo">
+                <span class="tn-logo-font">Siya World Holidays</span>
+            </a>
+
+            <!-- Right: Mobile Account Toggle (hidden on desktop) -->
+            <a href="#customerDashboardOffcanvas" class="text-dark d-flex d-lg-none align-items-center text-decoration-none order-3 tn-mobile-account-toggle" data-bs-toggle="offcanvas" role="button" aria-controls="customerDashboardOffcanvas">
+                <img src="images/bar.svg" alt="Menu" width="30" height="30">
+            </a>
+
+            <!-- Links & Content -->
+            <div class="collapse navbar-collapse order-lg-3 order-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-5 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="about.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="travel-packages.html">TRAVEL
+                            PACKAGES</a>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="contact.html">CONTACT
+                            US</a></li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0 tn-gap-2rem">
+                                </div>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="tn-about-main">
+        <!-- Hero Section -->
+        <div class="position-relative w-100">
+            <div class="overflow-hidden position-relative">
+                <img src="images/long/3rd-long.jpg" alt="Hotels Hero" class="w-100 tn-about-hero-img">
+
+                <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
+                    <h1 class="fw-bold mb-3 tn-about-hero-title">
+                        Find Your <span class="text-warning tn-about-hero-stroke">Perfect Hotel</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-muted fs-5 mb-0 mx-auto tn-about-hero-desc">
+                        Explore our handpicked selection of premium hotels and resorts designed to offer comfort,
+                        luxury, and
+                        unforgettable
+                        stays for every type of traveler.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="tn-breadcrumb-container">
+            <nav class="tn-breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 tn-fs-sm">
+                    <li class="breadcrumb-item"><a href="index.html"
+                            class="text-decoration-none text-secondary fw-medium">Home</a></li>
+                    <li class="breadcrumb-item active text-dark fw-medium" aria-current="page">Hotels</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- About Us Text Description -->
+        <section class="mt-4">
+            <div class="container-xl px-4">
+                <p class="text-muted fs-5 lh-lg mb-0 text-start fw-light">
+                    Our thoughtfully curated hotel collection offers the perfect retreat for every traveler. From
+                    luxurious penthouses in the heart of the city to charming boutique hotels tucked away in serene
+                    landscapes, we
+                    provide exceptional accommodations that blend comfort with world-class service. Let us handle your
+                    stay while you enjoy the journey of a lifetime.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Box from Index -->
+        <div class="container-xl px-4 mt-5 d-xxxl-none">
+            <!-- Search Box -->
+            <div
+                class="tn-search-box bg-white rounded-4 p-3 p-lg-4 mx-auto tn-search-box-container tn-search-contour shadow-none">
+                <!-- Package Fields -->
+                <div class="tn-search-fields d-flex flex-wrap flex-lg-nowrap gap-2" data-fields="hotel">
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="fas fa-search text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100"
+                            placeholder="Hotel name or destination" aria-label="Hotel name or destination">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Check In" aria-label="Check In">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Check Out" aria-label="Check Out">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="fas fa-user text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100"
+                            placeholder="Guests & Rooms" aria-label="Guests & Rooms">
+                    </div>
+                    <button class="btn tn-btn-primary tn-search-btn fw-light text-nowrap">SEARCH</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destinations Content -->
+        <section class="pb-5 tn-mt-2rem">
+            <div class="container-xl px-4">
+                <div class="row g-4">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 col-xxxl-2">
+                        <!-- Map Block -->
+                        <div class="bg-white rounded-4 border p-2 mb-4">
+                            <div id="hotelMap" class="rounded-3 overflow-hidden tn-map-col"></div>
+                        </div>
+
+                        <!-- Property Type Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Property Type</h5>
+                                <i class="fas fa-chevron-down text-muted small"></i>
+                            </div>
+
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio">
+                                    <input class="form-check-input border-secondary" type="radio" name="propertyType"
+                                        id="prop1">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="prop1">Hotel</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="radio" name="propertyType"
+                                        id="prop2">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="prop2">Resort</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="radio" name="propertyType"
+                                        id="prop3">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="prop3">Villa</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="radio" name="propertyType"
+                                        id="prop4">
+                                    <label class="form-check-label text-secondary tn-fs-sm"
+                                        for="prop4">Apartment</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="radio" name="propertyType"
+                                        id="prop5">
+                                    <label class="form-check-label text-secondary tn-fs-sm"
+                                        for="prop5">Guesthouse</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popular Filters & Price Range Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <!-- Popular Filters Section -->
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Popular filters</h5>
+                                <div class="d-flex flex-column gap-3 mt-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter1">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter1">Hotels</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1697</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter2">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="popFilter2">
+                                                Very Good: 8+<br>
+                                                <small class="text-secondary">Based on guest reviews</small>
+                                            </label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2417</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter3">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter3">Breakfast included</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1300</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter4">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter4">Apartments</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2572</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter5">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter5">Paris City Center</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1796</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter6">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter6">Free cancellation</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2180</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter7">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="popFilter7">Private bathroom</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">3546</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="popFilter8">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="popFilter8">Parking</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1956</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price Range Section -->
+                            <div class="border-top pt-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Price per night</h5>
+                                    <i class="fas fa-chevron-down text-muted small"></i>
+                                </div>
+                                <div class="mt-4">
+                                    <p class="tn-fs-sm text-dark fw-medium mb-3" id="priceDisplay">$50 - $500+</p>
+                                    <div class="tn-multi-range">
+                                        <div class="tn-multi-range-track"></div>
+                                        <div class="tn-multi-range-active" id="priceActive"></div>
+                                        <input type="range" id="minPrice" min="50" max="500" value="50">
+                                        <input type="range" id="maxPrice" min="50" max="500" value="500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Property Rating Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="mb-3">
+                                <h5 class="fw-bold mb-1 tn-logo-text tn-text-brand-dark">Property rating</h5>
+                                <p class="text-secondary tn-fs-sm mb-0">Find high-quality hotels and vacation rentals
+                                </p>
+                            </div>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox"
+                                            id="propRating1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="propRating1">1
+                                            star</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">60</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox"
+                                            id="propRating2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="propRating2">2
+                                            stars</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">213</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox"
+                                            id="propRating3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="propRating3">3
+                                            stars</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">1268</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox"
+                                            id="propRating4">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="propRating4">4
+                                            stars</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">1956</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox"
+                                            id="propRating5">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="propRating5">5
+                                            stars</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">129</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tn-filter-box rounded-4 border bg-white p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Bed preference</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterBed1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterBed1">Twin beds</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">891</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterBed2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterBed2">Double bed</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">2,735</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tn-filter-box rounded-4 border bg-white p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Travel group</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterTrav1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterTrav1">Children allowed</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">3,674</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterTrav2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterTrav2">Pets allowed</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">1,577</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tn-filter-box rounded-4 border bg-white p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Room accessibility</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc1">Upper floors accessible by elevator</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">242</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc2">Entire unit located on ground floor</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">75</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc3">Walk-in shower</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">158</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc4">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc4">Entire unit wheelchair accessible</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">60</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc5">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc5">Roll-in shower</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">29</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc6">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc6">Shower chair</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">22</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc7">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc7">Adapted bath</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">23</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc8">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc8">Toilet with grab rails</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">27</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc9">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc9">Emergency cord in bathroom</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">4</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc10">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc10">Raised toilet</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">65</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterAcc11">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterAcc11">Lowered sink</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">26</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Main Content (Grid) -->
+                    <div class="col-lg-9 col-xxxl-8">
+        <!-- Search Box Duplicated for 2350px -->
+        <div class="mb-4 d-none d-xxxl-block">
+            <!-- Search Box -->
+            <div
+                class="tn-search-box bg-white rounded-4 p-3 p-lg-4 mx-auto tn-search-box-container tn-search-contour shadow-none">
+                <!-- Package Fields -->
+                <div class="tn-search-fields d-flex flex-wrap flex-lg-nowrap gap-2" data-fields="hotel">
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="fas fa-search text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100"
+                            placeholder="Hotel name or destination" aria-label="Hotel name or destination">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Check In" aria-label="Check In">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Check Out" aria-label="Check Out">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3">
+                        <i class="fas fa-user text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100"
+                            placeholder="Guests & Rooms" aria-label="Guests & Rooms">
+                    </div>
+                    <button class="btn tn-btn-primary tn-search-btn fw-light text-nowrap">SEARCH</button>
+                </div>
+            </div>
+        </div>
+
+                        <!-- Top bar -->
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                            <span class="text-secondary tn-fs-sm">Showing 1 – 12 of 20 results</span>
+                            <div class="d-flex align-items-center gap-2 bg-white rounded-pill border px-3 py-1">
+                                <span class="text-secondary tn-fs-sm text-nowrap">Sort by:</span>
+                                <select
+                                    class="form-select form-select-sm border-0 bg-transparent shadow-none tn-fs-sm tn-text-brand-dark fw-medium tn-sort-select" aria-label="Select option">
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Rating: Low to High</option>
+                                    <option>Rating: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 3-Column Grid -->
+                        <div class="row g-4">
+                            <!-- Card 1 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt=" Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Le Ritz Paris
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel4.png" alt="Paris"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,200 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.6</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Deluxe
+                                                    Double Room</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Hotel Lutetia
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/room2.png" alt="Switzerland"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$850 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.5</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Executive
+                                                    Suite</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">The Peninsula Paris</h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/lobby.png" alt="Europe"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,500 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>5.0</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Luxury
+                                                    Penthouse</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Shangri-La Paris
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/room1.png" alt="Bali"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,100 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.6</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Superior
+                                                    King Room</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Mandarin Oriental Paris
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel1.png" alt="Japan"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$950 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.9</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Classic
+                                                    City View</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Four Seasons Hotel George V
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel7.png" alt=" Rome"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,800 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.8</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Standard
+                                                    Room</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 7 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Park Hyatt Paris-Vendôme
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/room3.png" alt="Venice"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$750 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.6</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Junior
+                                                    Suite</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 8 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Hotel Plaza Athénée
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/room4.png" alt="Spain"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,350 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.5</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Presidential
+                                                    Suite</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 9 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Le Bristol Paris
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel5.png" alt="London"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,600 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>5.0</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Prestige
+                                                    Eiffel View</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 10 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">La Réserve Paris
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel6.png" alt="Venice"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,050 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.6</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Family
+                                                    Connecting Room</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 11 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Hôtel de Crillon
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/room5.png" alt="Spain"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$1,450 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>4.5</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Balcony
+                                                    Studio</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 12 -->
+                            <div class="col-md-6 col-xl-4">
+                                <div
+                                    class="card border border-light-subtle rounded-4 h-100 tn-hover-zoom overflow-hidden p-3 bg-white">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <img src="images/svg/destination-dark.svg" alt="Location" width="16"
+                                            height="16">
+                                        <span class="text-secondary tn-fs-sm">Paris, France</span>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 tn-logo-text tn-text-brand-dark">Le Royal Monceau
+                                    </h5>
+                                    <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                        <img src="images/hotel/hotel3.png" alt="London"
+                                            class="w-100 object-fit-cover tn-card-img">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="fw-normal tn-price-color fs-5">$900 <span
+                                                class="text-secondary fw-normal tn-fs-sm">/ Night</span></div>
+                                        <div class="badge text-white rounded-pill px-3 py-1 tn-bg-green"><i
+                                                class="fas fa-star small me-1 text-white"></i>5.0</div>
+                                    </div>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-auto bg-light rounded-4 p-2 px-3 border border-1 border-light">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div
+                                                class="bg-white rounded-circle d-flex align-items-center justify-content-center border tn-icon-btn">
+                                                <i class="fas fa-bed tn-color-green small"></i>
+                                            </div>
+                                            <div>
+                                                <small class="text-secondary d-block tn-fs-xs">Room Type</small>
+                                                <span class="fw-medium tn-text-brand-dark tn-fs-sm d-block">Signature
+                                                    Loft</span>
+                                            </div>
+                                        </div>
+                                        <a href="hotel-details.html"
+                                            class="btn btn-light bg-light rounded-3 d-flex align-items-center justify-content-center border tn-icon-btn">
+                                            <i class="fas fa-arrow-right text-dark small"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="col-12 mt-5">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-end gap-2">
+                                        <li class="page-item disabled">
+                                            <a class="page-link rounded-3 d-flex align-items-center border-0 text-secondary"
+                                                href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item active"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 tn-bg-green text-white tn-page-btn"
+                                                href="#">1</a></li>
+                                        <li class="page-item"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 text-dark fw-medium tn-page-btn"
+                                                href="#">2</a></li>
+                                        <li class="page-item"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 text-dark fw-medium tn-page-btn"
+                                                href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-3 d-flex align-items-center border-0 text-dark fw-medium"
+                                                href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                                        </div>
+                    <!-- Right Sidebar (Visible only on >=2350px) -->
+                    <div class="col-xxxl-2 d-none d-xxxl-block">
+
+
+                        <div class="tn-filter-box rounded-4 border bg-white p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Distance from centre of city</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterDist1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterDist1">Less than 1 km</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">1,304</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterDist2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterDist2">Less than 3 km</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">4,331</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterDist3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterDist3">Less than 5 km</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">4,809</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tn-filter-box rounded-4 border bg-white p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Reservation policy</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterRes1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterRes1">Free cancellation</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">3,492</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterRes2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterRes2">Book without credit card</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">429</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="facFilterRes3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilterRes3">No prepayment</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">2,608</span>
+                                </div>
+                            </div>
+                        </div>
+
+                                                <!-- Bedrooms and Meals Block -->
+                        <div class="tn-filter-box bg-white rounded-4 border p-4 mb-4">
+                            <!-- Bedrooms and bathrooms Section -->
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Bedrooms and bathrooms</h5>
+                                <div class="d-flex flex-column gap-4 mt-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-dark tn-fs-sm ms-2">Bedrooms</span>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <button type="button"
+                                                class="btn btn-sm btn-link text-secondary text-decoration-none p-0 shadow-none"><i
+                                                    class="fas fa-minus"></i></button>
+                                            <span class="text-dark fw-medium">0</span>
+                                            <button type="button"
+                                                class="btn btn-sm btn-link tn-text-brand-primary text-decoration-none p-0 shadow-none"><i
+                                                    class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-dark tn-fs-sm ms-2">Bathrooms</span>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <button type="button"
+                                                class="btn btn-sm btn-link text-secondary text-decoration-none p-0 shadow-none"><i
+                                                    class="fas fa-minus"></i></button>
+                                            <span class="text-dark fw-medium">0</span>
+                                            <button type="button"
+                                                class="btn btn-sm btn-link tn-text-brand-primary text-decoration-none p-0 shadow-none"><i
+                                                    class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Meals Section -->
+                            <div class="border-top pt-4">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Meals</h5>
+                                <div class="d-flex flex-column gap-3 mt-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="mealFilter1">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="mealFilter1">Breakfast included</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1300</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="mealFilter2">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="mealFilter2">Breakfast & dinner included</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">12</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="mealFilter3">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="mealFilter3">Kitchen facilities</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2629</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Room facilities Section -->
+                            <div class="border-top pt-4 mt-4">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Room facilities</h5>
+                                <div class="d-flex flex-column gap-3 mt-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="facFilter1">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="facFilter1">Private bathroom</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">3546</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="facFilter2">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="facFilter2">Balcony</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">536</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="facFilter3">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilter3">Air
+                                                conditioning</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2082</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="facFilter4">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="facFilter4">Kitchen/Kitchenette</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">2629</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="facFilter5">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="facFilter5">Sea
+                                                view</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">1</span>
+                                    </div>
+
+                                    <!-- Collapsible portion for the rest -->
+                                    <div class="collapse show" id="moreRoomFacilities">
+                                        <div class="d-flex flex-column gap-3">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter6">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter6">Private pool</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">10</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter7">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter7">Hot tub</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">97</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter8">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter8">Bathtub</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">1155</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter9">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter9">View</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">1132</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter10">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter10">Washing machine</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">1751</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter11">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter11">Terrace</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">346</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter12">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter12">Upper floors accessible by elevator</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">1273</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter13">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter13">Spa tub</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">46</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter14">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter14">Towels</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">3278</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter15">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter15">Fireplace</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">124</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter16">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter16">Refrigerator</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">2260</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter17">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter17">Lake view</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">5</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter18">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter18">Kitchenette</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">798</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter19">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter19">Heating</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">3983</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter20">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter20">Toilet</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">3096</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter21">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter21">Linens</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">2645</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter22">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter22">Microwave</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">1991</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter23">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter23">Coffee/Tea maker</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">3245</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter24">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter24">Flat-screen TV</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">3076</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div class="form-check tn-custom-radio mb-0">
+                                                    <input class="form-check-input border-secondary" type="checkbox"
+                                                        id="facFilter25">
+                                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                        for="facFilter25">Shower</label>
+                                                </div>
+                                                <span class="text-secondary tn-fs-sm">2991</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a class="tn-text-brand-primary text-decoration-none tn-fs-sm fw-medium d-inline-flex align-items-center mt-2 tn-toggle-reviews-btn"
+                                        data-bs-toggle="collapse" href="#moreRoomFacilities" role="button"
+                                        aria-expanded="true" aria-controls="moreRoomFacilities">
+                                        Show less <i class="fas fa-chevron-up ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="tn-footer py-5">
+            <div class="container-xl px-4">
+                <div class="row g-5 mb-5">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- Brand -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="images/siya-logo.png" alt="Siya World Holidays" height="45" class="tn-footer-logo">
+                            <span class="text-white fw-bold fs-5 tn-logo-font">Siya World Holidays</span>
+                        </div>
+                        <p class="tn-footer-tagline">Travel Curated, Memories Created.</p>
+                        <p class="text-white-50 small">Ahmedabad-based travel agency offering curated domestic & international tour packages, flight bookings, train tickets and visa services.</p>
+                        <p class="text-white-50 small mb-0"><i class="fas fa-file-alt me-1"></i> GST: 24BYSPR7681D1ZT</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="https://www.facebook.com/share/1D79H1ZPWE/?mibextid=wwXIfr" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor" width="14" height="14"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                            <a href="https://www.instagram.com/siya_world_holidays" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="18" height="18"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                            <a href="https://wa.me/919898722582" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="16" height="16"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                        </div>
+                    </div>
+                <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Quick Links</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="tn-footer-link">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="tn-footer-link">About Us</a></li>
+                            <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Tour Packages</a>
+                            </li>
+                            <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Destinations</a></li>
+                            <li class="mb-2"><a href="#" class="tn-footer-link">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Support</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="tn-footer-link">FAQ</a></li>
+                            <li class="mb-2"><a href="contact.html" class="tn-footer-link">Contact Us</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="tn-footer-link">Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="tn-footer-link">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Contact Us</h6>
+                        <ul class="list-unstyled">
+                            <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                                <i class="fas fa-phone text-warning mt-1"></i>
+                                <span>+91 98987 22582</span>
+                            </li>
+                            <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                                <i class="fas fa-envelope text-warning mt-1"></i>
+                                <span>info@siyaworldholidays.com</span>
+                            </li>
+                            <li class="d-flex gap-2 text-white-50 align-items-start">
+                                <i class="fas fa-map-marker-alt text-warning mt-1"></i>
+                                <span>A 404 Panchshilp Residency,<br>Opp Shreedhar Bunglows, Nikol,<br>Ahmedabad 382350, Gujarat</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="col-lg-3 col-md-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Get in Touch</h6>
+                        <p class="text-white-50 mb-3 small">Stay updated with our latest travel news, exclusive offers, and expert marketing insights delivered directly to your inbox. Join our community today!</p>
+                        <a href="tel:+919898722582" class="btn btn-warning btn-sm rounded-pill px-3 py-2 fw-medium text-dark mb-2 d-inline-block">Call +91 98987 22582</a><br><a href="https://wa.me/919898722582" target="_blank" class="btn btn-outline-light btn-sm rounded-pill px-3 py-2 fw-medium d-inline-block mt-1">WhatsApp Us</a>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <hr class="border-secondary">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-3">
+                    <p class="text-white-50 small mb-0">Copyright &copy; 2026 Siya World Holidays. All rights reserved. | Crafted with &#10084;&#65039; by <a href="https://www.linkedin.com/in/chirag-vasani-7b7729b3/" target="_blank" class="text-warning text-decoration-none">Chirag Vasani</a></p>
+                    <div class="d-flex gap-4">
+                        <a href="privacy.html" class="tn-footer-link small">Privacy Policy</a>
+                        <a href="terms.html" class="tn-footer-link small">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+        </div>
+
+        
+        </div>
+
+        <!-- ========== OFFCANVAS MENU ========== -->
+        <div class="offcanvas offcanvas-end tn-offcanvas-w-350" tabindex="-1" id="customerDashboardOffcanvas" aria-labelledby="customerDashboardOffcanvasLabel">
+            <div class="offcanvas-header pt-4 pb-0 border-0 d-flex flex-column align-items-start px-4">
+                <button type="button" class="btn border-0 p-0 mb-4 text-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fa-light fa-arrow-right-to-line fs-3 text-muted"></i>
+                </button>
+                <div class="d-flex align-items-center gap-3 w-100">
+                    <img src="images/2face.jpg" alt="User Avatar" class="rounded-circle tn-user-avatar">
+                    <div class="d-flex flex-column">
+                        <span class="fw-normal text-dark">John Traveler</span>
+                        <span class="text-muted small fw-light">john@traveler.com</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 text-muted opacity-25">
+            <div class="offcanvas-body d-flex flex-column px-4">
+                <ul class="list-unstyled d-flex flex-column gap-4 mb-auto px-2">
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Profile</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-money-check fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Coupons</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-cart-shopping fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Order History</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-bell fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Notification</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gift fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Favorites</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gear fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Settings</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user-headset fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Support & FAQ</span></a></li>
+                </ul>
+                
+                <div class="mt-auto pt-4 pb-3">
+                    <button class="btn w-100 py-3 rounded-4 d-flex align-items-center justify-content-center gap-2 bg-white shadow-none tn-logout-btn">
+                        <i class="fa-light fa-arrow-right-from-bracket fs-5"></i>
+                        <span class="fw-normal tn-letter-space-05">LOGOUT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap 5 JS Bundle -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- Leaflet JS -->
+        <script src="../../unpkg.com/leaflet%401.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="js/script.js"></script>
+
+    <!-- ========== WHATSAPP FLOATING WIDGET ========== -->
+    <div class="tn-wa-widget" id="waWidget">
+        <!-- Chat Popup -->
+        <div class="tn-wa-popup" id="waPopup">
+            <div class="tn-wa-popup-header">
+                <img src="images/siya-logo.png" alt="Siya World Holidays" class="tn-wa-popup-logo">
+                <div>
+                    <h6 class="mb-0 text-white fw-bold">Siya World Holidays</h6>
+                    <small class="text-white-50">Typically replies within minutes</small>
+                </div>
+                <button class="tn-wa-close" id="waClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="tn-wa-popup-body">
+                <div class="tn-wa-msg">
+                    <p>Hello! &#128075;<br>How can we help you today? Ask us about tour packages, flights, visas or anything travel-related!</p>
+                    <span class="tn-wa-time">Siya World Holidays</span>
+                </div>
+            </div>
+            <div class="tn-wa-popup-footer">
+                <a href="https://wa.me/919898722582?text=Hello,%20I'm%20interested%20in%20your%20travel%20services" target="_blank" class="tn-wa-send-btn">
+                    <i class="fab fa-whatsapp me-2"></i> Start Chat
+                </a>
+                <a href="tel:+919898722582" class="tn-wa-call-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+        <!-- Floating Button -->
+        <button class="tn-wa-btn" id="waToggle" aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </button>
+    </div>
+
+    <script>
+    (function(){
+        var toggle = document.getElementById('waToggle');
+        var popup = document.getElementById('waPopup');
+        var close = document.getElementById('waClose');
+        if(toggle && popup && close){
+            toggle.addEventListener('click', function(){ popup.classList.toggle('tn-wa-show'); });
+            close.addEventListener('click', function(){ popup.classList.remove('tn-wa-show'); });
+        }
+    })();
+    </script>
+</body>
+
+</html>

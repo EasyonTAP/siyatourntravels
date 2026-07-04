@@ -1,0 +1,805 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Booking - Siya World Holidays</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom stylings for the Checkout/Booking form */
+        .tn-booking-form-control {
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.15);
+            background-color: #fcfcfc;
+            padding: 12px 16px;
+            font-size: 15px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: none;
+        }
+        .tn-booking-form-control:focus {
+            background-color: #fff;
+            border-color: var(--tn-primary);
+            box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.15);
+            outline: none;
+        }
+        .tn-booking-label {
+            font-size: 14px;
+            color: #495057;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+        .tn-booking-card {
+            background-color: #white;
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: box-shadow 0.3s ease;
+        }
+        .tn-booking-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .tn-info-icon-btn {
+            background: none;
+            border: none;
+            color: #6c757d;
+            padding: 0;
+            font-size: 14px;
+            margin-left: 4px;
+            cursor: pointer;
+            transition: color 0.15s ease;
+        }
+        .tn-info-icon-btn:hover {
+            color: var(--tn-primary);
+        }
+        /* Custom Accordion Items */
+        .tn-checkout-accordion-header {
+            cursor: pointer;
+            padding: 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #212529;
+            user-select: none;
+            transition: color 0.15s ease;
+        }
+        .tn-checkout-accordion-header:hover {
+            color: #000;
+        }
+        .tn-checkout-accordion-header .fa-chevron-down {
+            font-size: 12px;
+            transition: transform 0.25s ease-in-out;
+            color: #6c757d;
+        }
+        .tn-checkout-accordion-header[aria-expanded="true"] .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        /* Phone input custom styles */
+        .tn-phone-container {
+            display: flex;
+            gap: 8px;
+        }
+        .tn-phone-country {
+            width: 100px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.15);
+            background-color: #fcfcfc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+            padding: 12px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        .tn-phone-country:hover {
+            background-color: #f1f3f5;
+        }
+        .tn-phone-country img {
+            width: 20px;
+            height: 14px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        /* Go to Payment button design */
+        .btn-go-to-payment {
+            background-color: var(--tn-primary) !important;
+            color: var(--tn-dark) !important;
+            border: none !important;
+            font-weight: 600 !important;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            border-radius: 50px;
+            padding: 16px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.2) !important;
+        }
+        .btn-go-to-payment:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.35) !important;
+        }
+        /* Inactive payment step header */
+        .tn-payment-step-inactive {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            color: #a0aec0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-weight: 500;
+        }
+        /* Sidebar layout styling */
+        .tn-sidebar-card {
+            background-color: white;
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+            padding: 24px;
+            position: sticky;
+            top: 100px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+        .tn-sidebar-card .tn-car-thumb {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            margin: 20px 0;
+            display: block;
+            border-radius: 12px;
+        }
+        .tn-badge-compact {
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #f8f9fa;
+        }
+        .tn-sidebar-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .tn-sidebar-inclusions {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 10px;
+        }
+        .tn-location-box {
+            background-color: #fcfcfc;
+            border: 1px solid #f1f3f5;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .tn-location-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        /* Custom Tooltip Styling */
+        .tn-tooltip-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .tn-tooltip-content {
+            visibility: hidden;
+            width: 220px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 12px;
+            line-height: 1.4;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            pointer-events: none;
+        }
+        .tn-tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        .tn-tooltip-wrapper:hover .tn-tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg tn-navbar fixed-top w-100 bg-white tn-z-1000" id="mainNavbar">
+        <div class="container-fluid px-4 mx-auto tn-max-w-1400 d-flex align-items-center justify-content-between">
+            <!-- Left: Mobile Menu Toggler -->
+            <button class="navbar-toggler border-0 p-0 order-1 d-lg-none tn-w-30" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-3 text-dark"></i>
+            </button>
+
+            <!-- Center: Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4 tn-logo-text order-2 mx-lg-0 mx-auto" href="index.html">
+                <img src="images/siya-logo.png" alt="Siya World Holidays Logo" height="50" class="tn-header-logo">
+                <span class="tn-logo-font">Siya World Holidays</span>
+            </a>
+
+            <!-- Right: Mobile Account Toggle -->
+            <a href="#customerDashboardOffcanvas" class="text-dark d-flex d-lg-none align-items-center text-decoration-none order-3 tn-mobile-account-toggle" data-bs-toggle="offcanvas" role="button" aria-controls="customerDashboardOffcanvas">
+                <img src="images/bar.svg" alt="Menu" width="30" height="30">
+            </a>
+
+            <!-- Links & Content -->
+            <div class="collapse navbar-collapse order-lg-3 order-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-5 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="travel-packages.html">TRAVEL PACKAGES</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="gallery.html">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="contact.html">CONTACT US</a></li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0 tn-gap-2rem">
+                                </div>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="tn-about-main">
+        <!-- Hero Section -->
+        <div class="position-relative w-100">
+            <div class="overflow-hidden position-relative">
+                <img src="images/long/3rd-long.jpg" alt="Booking Hero" class="w-100 tn-about-hero-img">
+
+                <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
+                    <h1 class="fw-bold mb-3 tn-about-hero-title">
+                        Confirm <span class="text-warning tn-about-hero-stroke">Your Booking</span>
+                    </h1>
+                    <p class="text-muted fs-5 mb-0 mx-auto tn-about-hero-desc">
+                        Provide driver details and review your rental parameters to finalize your car rental.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="tn-breadcrumb-container">
+            <nav class="tn-breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 tn-fs-sm">
+                    <li class="breadcrumb-item"><a href="index.html"
+                            class="text-decoration-none text-secondary fw-medium">Home</a></li>
+                    <li class="breadcrumb-item"><a href="car_rental.html"
+                            class="text-decoration-none text-secondary fw-medium">Car Rental</a></li>
+                    <li class="breadcrumb-item active text-dark fw-medium" aria-current="page">Booking Car</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- About Us Text Description -->
+        <section class="mt-4">
+            <div class="container-xl px-4">
+                <p class="text-muted fs-5 lh-lg mb-0 text-start fw-light">
+                    Welcome to the checkout system. Please fill in the driver information below, verify pick up and return details in the sidebar summary, and click the final checkout button to complete your vehicle rental.
+                </p>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="pb-5 tn-mt-2rem">
+            <div class="container-xl px-4">
+                <!-- Header with total -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold tn-text-brand-dark mb-0 fs-3">Confirm your booking</h2>
+                    <div class="d-lg-none">
+                        <span class="text-muted tn-fs-sm">TOTAL: </span>
+                        <span class="fw-bold text-dark fs-5" id="headerTotalDisplay">€389.86</span>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Left Column (Form Fields) -->
+                    <div class="col-lg-6">
+                        <!-- 1. Driver details Card -->
+                        <div class="tn-booking-card bg-white">
+                            <h4 class="fw-bold tn-text-brand-dark mb-4 fs-5">1. Driver details</h4>
+                            
+                            <form id="bookingForm" class="row g-3">
+                                <!-- First name & Last name -->
+                                <div class="col-md-6">
+                                    <label class="tn-booking-label fw-medium">First name*</label>
+                                    <input type="text" class="form-control tn-booking-form-control" required placeholder="Enter first name" aria-label="Enter first name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="tn-booking-label fw-medium">Last name*</label>
+                                    <input type="text" class="form-control tn-booking-form-control" required placeholder="Enter last name" aria-label="Enter last name">
+                                </div>
+
+                                <!-- Date of birth & Email -->
+                                <div class="col-md-6">
+                                    <label class="tn-booking-label fw-medium">Date of birth*</label>
+                                    <input type="text" class="form-control tn-booking-form-control" required placeholder="DD / MM / YYYY" aria-label="DD / MM / YYYY">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="tn-booking-label fw-medium">
+                                        Email*
+                                        <span class="tn-tooltip-wrapper">
+                                            <i class="fas fa-info-circle text-secondary ms-1 small"></i>
+                                            <span class="tn-tooltip-content">We will send your rental voucher and confirmation receipt to this email address.</span>
+                                        </span>
+                                    </label>
+                                    <input type="email" class="form-control tn-booking-form-control" required placeholder="Enter email address" aria-label="Enter email address">
+                                </div>
+
+                                <!-- Consents Checkboxes -->
+                                <div class="col-12 mt-4">
+                                    <div class="form-check d-flex align-items-start gap-2 mb-3">
+                                        <input class="form-check-input mt-1 border-secondary shadow-none" type="checkbox" id="marketingConsent1">
+                                        <label class="form-check-label text-muted small lh-base" for="marketingConsent1">
+                                            I consent to receive news and special offers from Europcar International.
+                                        </label>
+                                    </div>
+                                    <div class="form-check d-flex align-items-start gap-2">
+                                        <input class="form-check-input mt-1 border-secondary shadow-none" type="checkbox" id="marketingConsent2">
+                                        <label class="form-check-label text-muted small lh-base" for="marketingConsent2">
+                                            I wish to receive news and special offers from Europcar Group’s business partners. For a full list of partners who may send you emails, please consult our <a href="#" class="text-dark fw-medium text-decoration-underline">Privacy Policy</a>.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Phone number -->
+                                <div class="col-md-6 mt-4">
+                                    <label class="tn-booking-label fw-medium">Phone number*</label>
+                                    <div class="tn-phone-container">
+                                        <div class="dropdown">
+                                            <div class="tn-phone-country border" id="countryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="https://flagcdn.com/ge.svg" alt="Georgia Flag" id="selectedFlag">
+                                                <span id="selectedCode">+995</span>
+                                                <i class="fas fa-chevron-down text-secondary ms-1 small"></i>
+                                            </div>
+                                            <ul class="dropdown-menu shadow border-0 tn-max-h-250-scroll" aria-labelledby="countryDropdown">
+                                                <li><a class="dropdown-item d-flex align-items-center gap-2 tn-country-item" href="#" data-code="ge" data-dial-code="+995"><img src="https://flagcdn.com/ge.svg" alt="GE" class="tn-w-20"> Georgia (+995)</a></li>
+                                                <li><a class="dropdown-item d-flex align-items-center gap-2 tn-country-item" href="#" data-code="fr" data-dial-code="+33"><img src="https://flagcdn.com/fr.svg" alt="FR" class="tn-w-20"> France (+33)</a></li>
+                                                <li><a class="dropdown-item d-flex align-items-center gap-2 tn-country-item" href="#" data-code="us" data-dial-code="+1"><img src="https://flagcdn.com/us.svg" alt="US" class="tn-w-20"> United States (+1)</a></li>
+                                                <li><a class="dropdown-item d-flex align-items-center gap-2 tn-country-item" href="#" data-code="ru" data-dial-code="+7"><img src="https://flagcdn.com/ru.svg" alt="RU" class="tn-w-20"> Russia (+7)</a></li>
+                                                <li><a class="dropdown-item d-flex align-items-center gap-2 tn-country-item" href="#" data-code="gb" data-dial-code="+44"><img src="https://flagcdn.com/gb.svg" alt="GB" class="tn-w-20"> United Kingdom (+44)</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="tel" class="form-control tn-booking-form-control w-100" required placeholder="Phone number" aria-label="Phone number">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Flight Information Card -->
+                        <div class="tn-booking-card bg-white">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <h4 class="fw-bold tn-text-brand-dark mb-0 fs-5">Flight information</h4>
+                                <span class="tn-tooltip-wrapper">
+                                    <i class="fas fa-info-circle text-secondary"></i>
+                                    <span class="tn-tooltip-content">Providing your flight number helps the rental counter track delays and hold your vehicle.</span>
+                                </span>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="tn-booking-label fw-medium text-secondary">Flight number (optional)</label>
+                                    <input type="text" class="form-control tn-booking-form-control" placeholder="e.g. AF1234" aria-label="e.g. AF1234">
+                                </div>
+                            </div>
+
+                            <!-- Accordion: Frequent traveler program -->
+                            <div class="tn-checkout-accordion-header mt-3" data-bs-toggle="collapse" data-bs-target="#frequentTravelerCollapse" aria-expanded="false" id="frequentTravelerBtn">
+                                <span class="fw-medium text-dark tn-fs-sm">Do you have a frequent traveler program?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="frequentTravelerCollapse">
+                                <div class="pt-3 row g-3">
+                                    <div class="col-md-6">
+                                        <label class="tn-booking-label">Program Name</label>
+                                        <select class="form-select tn-booking-form-control" aria-label="Select option">
+                                            <option value="">Select program</option>
+                                            <option>Flying Blue (Air France/KLM)</option>
+                                            <option>Miles & More (Lufthansa)</option>
+                                            <option>SkyMiles (Delta)</option>
+                                            <option>Executive Club (British Airways)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="tn-booking-label">Membership Number</label>
+                                        <input type="text" class="form-control tn-booking-form-control" placeholder="Program number" aria-label="Program number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add a coupon code Accordion -->
+                        <div class="tn-booking-card bg-white py-3">
+                            <div class="tn-checkout-accordion-header" data-bs-toggle="collapse" data-bs-target="#couponCollapse" aria-expanded="false" id="couponBtn">
+                                <span class="fw-medium text-dark tn-fs-sm">Add a coupon code</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="couponCollapse">
+                                <div class="pt-3 d-flex gap-2 align-items-center tn-max-w-400">
+                                    <input type="text" class="form-control tn-booking-form-control" placeholder="Promo / Coupon code" aria-label="Promo / Coupon code">
+                                    <button class="btn tn-btn-primary rounded-3 px-4 py-2 border-0 fw-medium">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mandatory Checkboxes & Confirm Buttons -->
+                        <div class="mt-4 mb-5">
+                            <div class="form-check d-flex align-items-start gap-2 mb-3">
+                                <input class="form-check-input mt-1 border-secondary shadow-none" type="checkbox" id="legalConsent1" required>
+                                <label class="form-check-label text-dark small lh-base" for="legalConsent1">
+                                    I have read, understood and I accept the <a href="#" class="text-dark fw-bold text-decoration-underline">Privacy Policy of Europcar</a>
+                                </label>
+                            </div>
+                            <div class="form-check d-flex align-items-start gap-2 mb-4">
+                                <input class="form-check-input mt-1 border-secondary shadow-none" type="checkbox" id="legalConsent2" required>
+                                <label class="form-check-label text-dark small lh-base" for="legalConsent2">
+                                    I acknowledge that I have read, understood and agree to the <a href="#" class="text-dark fw-bold text-decoration-underline">Europcar Terms and Conditions</a>
+                                </label>
+                            </div>
+
+                            <!-- Go to payment button -->
+                            <button type="submit" form="bookingForm" class="btn btn-go-to-payment w-100 py-3 text-uppercase mb-4">
+                                Go to payment
+                            </button>
+
+                            <!-- Inactive Payment Step -->
+                            <div class="tn-payment-step-inactive mt-3">
+                                <span class="fs-5">2. Payment</span>
+                                <i class="fas fa-chevron-down fs-6"></i>
+                            </div>
+
+                            <!-- Data processing text block -->
+                            <div class="text-muted tn-fs-xs lh-lg mt-4 text-start">
+                                Your personal data are processed by Europcar International, 13 ter boulevard Berthier, 75017, Paris, France (hereinafter referred to as “we”, “us” or “our”), acting as data controller, to manage your booking and your rental agreement.<br><br>
+                                Your personal data might be also processed to manage unpaid invoice and fine that you may be subject to when using the rental vehicle.<br><br>
+                                You have the right to object on communication about your rental by clicking on the unsubscribe link present in these communications. Please note that this type of communication may include marketing for similar products and services.<br><br>
+                                Your personal data will be disclosed to our authorized personnel and may be transferred outside the European Union. If so, we use appropriate safeguards.<br><br>
+                                You can exercise your rights of access, of rectification, your right to object, obtain the "portability" of your data, your right to erasure and to data limitation, by contacting <a href="mailto:dpo@europcar.com" class="text-dark fw-bold text-decoration-underline">dpo@europcar.com</a>. To obtain more information on how we process your personal data and on your rights under the data protection law, please consult our <a href="#" class="text-dark fw-bold text-decoration-underline">Privacy Policy</a>.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column (Sidebar Vehicle Summary) -->
+                    <div class="col-lg-6">
+                        <div class="tn-sidebar-card bg-white border">
+                            <!-- Sidebar Header -->
+                            <div class="d-flex justify-content-between align-items-center pb-3 border-bottom">
+                                <h4 class="fw-bold tn-text-brand-dark mb-0 fs-5">Vehicle</h4>
+                                <span class="fw-bold text-dark fs-5" id="carTotalDisplay">€389.86</span>
+                            </div>
+
+                            <!-- Car Details -->
+                            <div class="pt-3">
+                                <h5 class="fw-bold text-dark mb-1 tn-letter-space-05" id="carNameDisplay">VOLKSWAGEN GOLF</h5>
+                                
+                                <div class="tn-badge-compact mt-2">
+                                    <span>OR SIMILAR COMPACT</span>
+                                    <span class="tn-tooltip-wrapper tn-cursor-pointer">
+                                        <i class="fas fa-info-circle text-muted"></i>
+                                        <span class="tn-tooltip-content">You will receive this model or an equivalent vehicle for your convenience.</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Car Image -->
+                            <img src="images/cars/compact_car.png" alt="Volkswagen Golf" class="tn-car-thumb" id="carImageDisplay">
+
+                            <!-- Standard Rate -->
+                            <div class="pt-3 pb-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-1">
+                                        <span class="text-secondary tn-fs-sm" id="rateDurationText">Europcar standard rate (for 10 days)</span>
+                                        <span class="tn-tooltip-wrapper tn-cursor-pointer">
+                                            <i class="fas fa-info-circle text-muted small"></i>
+                                            <span class="tn-tooltip-content">This includes the base vehicle rental rate for 10 full rental days.</span>
+                                        </span>
+                                    </div>
+                                    <span class="fw-semibold text-dark tn-fs-sm" id="carRateDisplay">€365.02</span>
+                                </div>
+                            </div>
+
+                            <!-- Accordion: What's included -->
+                            <div class="tn-checkout-accordion-header border-bottom py-2" data-bs-toggle="collapse" data-bs-target="#inclusionsCollapse" aria-expanded="false" id="inclusionsBtn">
+                                <span class="fw-medium text-success tn-fs-xs uppercase text-decoration-none">WHAT'S INCLUDED?</span>
+                                <i class="fas fa-chevron-down text-success"></i>
+                            </div>
+                            <div class="collapse" id="inclusionsCollapse">
+                                <div class="tn-sidebar-inclusions">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0 tn-fs-xs text-secondary">
+                                        <li class="d-flex align-items-center gap-2"><i class="fas fa-check text-success small"></i> Collision Damage Waiver (CDW)</li>
+                                        <li class="d-flex align-items-center gap-2"><i class="fas fa-check text-success small"></i> Theft Protection (TP)</li>
+                                        <li class="d-flex align-items-center gap-2"><i class="fas fa-check text-success small"></i> Unlimited Mileage</li>
+                                        <li class="d-flex align-items-center gap-2"><i class="fas fa-check text-success small"></i> Local Airport Taxes & Fees</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Pickup / Return Slots -->
+                            <div class="pt-4 border-top mt-3">
+                                <!-- Pick up -->
+                                <div class="tn-location-box">
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <div class="tn-location-dot bg-success"></div>
+                                        <span class="fw-medium text-dark tn-fs-xs text-uppercase">Pick up</span>
+                                    </div>
+                                    <div class="fw-bold text-dark tn-fs-sm">Paris CDG Airport Terminal 1</div>
+                                    <div class="text-secondary tn-fs-xs mt-1">2026-05-31 - 10:30</div>
+                                </div>
+
+                                <!-- Return -->
+                                <div class="tn-location-box">
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <div class="tn-location-dot bg-danger"></div>
+                                        <span class="fw-medium text-dark tn-fs-xs text-uppercase">Return</span>
+                                    </div>
+                                    <div class="fw-bold text-dark tn-fs-sm">Paris CDG Airport Terminal 1</div>
+                                    <div class="text-secondary tn-fs-xs mt-1">2026-06-10 - 10:30</div>
+                                </div>
+                            </div>
+
+                            <!-- Total Display -->
+                            <div class="pt-3 border-top mt-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold text-dark fs-5">Total</span>
+                                    <span class="fw-bold text-dark fs-4" id="sidebarTotalDisplay">€389.86</span>
+                                </div>
+                                <div class="text-end text-secondary tn-fs-xs mt-1">To pay at desk</div>
+                            </div>
+
+                            <!-- Bottom Accordions -->
+                            <div class="mt-4 pt-2 border-top">
+                                <!-- Deposit -->
+                                <div class="tn-checkout-accordion-header py-2" data-bs-toggle="collapse" data-bs-target="#depositCollapse" aria-expanded="false">
+                                    <span class="fw-normal text-secondary tn-fs-sm">Deposit</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="collapse" id="depositCollapse">
+                                    <div class="pb-3 text-secondary tn-fs-xs lh-base">
+                                        A security deposit of €300.00 will be blocked on your credit card at the time of pickup. This deposit is fully refunded after the vehicle is returned in good condition.
+                                    </div>
+                                </div>
+
+                                <!-- Fuel Policy -->
+                                <div class="tn-checkout-accordion-header py-2" data-bs-toggle="collapse" data-bs-target="#fuelCollapse" aria-expanded="false">
+                                    <span class="fw-normal text-secondary tn-fs-sm">Fuel policy</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="collapse" id="fuelCollapse">
+                                    <div class="pb-3 text-secondary tn-fs-xs lh-base">
+                                        <strong>Like-for-like / Full-to-full:</strong> The vehicle will be delivered with a full tank of fuel and should be returned full to avoid refueling fees.
+                                    </div>
+                                </div>
+
+                                <!-- Refund Policy -->
+                                <div class="tn-checkout-accordion-header py-2" data-bs-toggle="collapse" data-bs-target="#refundCollapse" aria-expanded="false">
+                                    <span class="fw-normal text-secondary tn-fs-sm">Modification, Cancellation and Refund policy</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="collapse" id="refundCollapse">
+                                    <div class="pb-3 text-secondary tn-fs-xs lh-base">
+                                        Free cancellation and modifications are permitted up to 48 hours prior to the scheduled rental pickup date and time. Cancellations within 48 hours are subject to a late fee.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="tn-footer py-5 text-white tn-bg-brand-dark position-relative">
+        <div class="container-fluid px-4 mx-auto tn-max-w-1400">
+            <div class="row g-4 mb-5">
+                <!-- Branding -->
+                <div class="col-lg-3 col-md-6">
+                    <a class="d-flex align-items-center gap-3 fw-bold fs-4 text-white text-decoration-none mb-4" href="index.html">
+                        <img src="images/siya-logo.png" alt="Siya World Holidays Logo" height="50" class="tn-header-logo" class="tn-invert-logo">
+                        <span class="tn-logo-font text-white">Siya World Holidays</span>
+                    </a>
+                    <p class="text-white-50 mb-4 small tn-max-w-320">
+                        Explore premium destinations, hotels, flights, and car rentals. We offer seamlessly curated booking solutions and travel guides for a premium trip.
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                            <a href="https://www.facebook.com/share/1D79H1ZPWE/?mibextid=wwXIfr" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor" width="14" height="14"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                            <a href="https://www.instagram.com/siya_world_holidays" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="18" height="18"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                            <a href="https://wa.me/919898722582" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="16" height="16"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                        </div>
+                    </div>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-white fw-bold mb-4 text-uppercase">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="tn-footer-link">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="tn-footer-link">About Us</a></li>
+                        <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Tour Packages</a></li>
+                        <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Destinations</a></li>
+                        <li class="mb-2"><a href="#" class="tn-footer-link">Reviews</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="text-white fw-bold mb-4 text-uppercase">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="tn-footer-link">FAQ</a></li>
+                        <li class="mb-2"><a href="contact.html" class="tn-footer-link">Contact Us</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="tn-footer-link">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="terms.html" class="tn-footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white fw-bold mb-4 text-uppercase">Contact Us</h6>
+                    <ul class="list-unstyled">
+                        <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                            <i class="fas fa-phone text-warning mt-1"></i>
+                            <span>+91 98987 22582</span>
+                        </li>
+                        <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                            <i class="fas fa-envelope text-warning mt-1"></i>
+                            <span>info@siyaworldholidays.com</span>
+                        </li>
+                        <li class="d-flex gap-2 text-white-50 align-items-start">
+                            <i class="fas fa-map-marker-alt text-warning mt-1"></i>
+                            <span>A 404 Panchshilp Residency,<br>Opp Shreedhar Bunglows, Nikol,<br>Ahmedabad 382350, Gujarat</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white fw-bold mb-4 text-uppercase">Get in Touch</h6>
+                    <p class="text-white-50 mb-3 small">Stay updated with our latest travel news and exclusive offers delivered directly to your inbox.</p>
+                    <a href="tel:+919898722582" class="btn btn-warning btn-sm rounded-pill px-3 py-2 fw-medium text-dark mb-2 d-inline-block">Call +91 98987 22582</a><br><a href="https://wa.me/919898722582" target="_blank" class="btn btn-outline-light btn-sm rounded-pill px-3 py-2 fw-medium d-inline-block mt-1">WhatsApp Us</a>
+                </div>
+            </div>
+
+            <hr class="border-secondary">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-3">
+                <p class="text-white-50 small mb-0">Copyright &copy; 2026 Siya World Holidays. All rights reserved. | Crafted with &#10084;&#65039; by <a href="https://www.linkedin.com/in/chirag-vasani-7b7729b3/" target="_blank" class="text-warning text-decoration-none">Chirag Vasani</a></p>
+                <div class="d-flex gap-4">
+                    <a href="privacy.html" class="tn-footer-link small">Privacy Policy</a>
+                    <a href="terms.html" class="tn-footer-link small">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    
+    </div>
+
+    <!-- ========== OFFCANVAS MENU ========== -->
+    <div class="offcanvas offcanvas-end tn-offcanvas-w-350" tabindex="-1" id="customerDashboardOffcanvas" aria-labelledby="customerDashboardOffcanvasLabel">
+        <div class="offcanvas-header pt-4 pb-0 border-0 d-flex flex-column align-items-start px-4">
+            <button type="button" class="btn border-0 p-0 mb-4 text-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-light fa-arrow-right-to-line fs-3 text-muted"></i>
+            </button>
+            <div class="d-flex align-items-center gap-3 w-100">
+                <img src="images/2face.jpg" alt="User Avatar" class="rounded-circle tn-user-avatar">
+                <div class="d-flex flex-column">
+                    <span class="fw-normal text-dark">John Traveler</span>
+                    <span class="text-muted small fw-light">john@traveler.com</span>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 text-muted opacity-25">
+        <div class="offcanvas-body d-flex flex-column px-4">
+            <ul class="list-unstyled d-flex flex-column gap-4 mb-auto px-2">
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Profile</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-money-check fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Coupons</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-cart-shopping fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Order History</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-bell fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Notification</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gift fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Favorites</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gear fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Settings</span></a></li>
+                <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user-headset fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Support & FAQ</span></a></li>
+            </ul>
+            
+            <div class="mt-auto pt-4 pb-3">
+                <button class="btn w-100 py-3 rounded-4 d-flex align-items-center justify-content-center gap-2 bg-white shadow-none tn-logout-btn">
+                    <i class="fa-light fa-arrow-right-from-bracket fs-5"></i>
+                    <span class="fw-normal tn-letter-space-05">LOGOUT</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/booking-car.js"></script>
+
+
+    <!-- ========== WHATSAPP FLOATING WIDGET ========== -->
+    <div class="tn-wa-widget" id="waWidget">
+        <!-- Chat Popup -->
+        <div class="tn-wa-popup" id="waPopup">
+            <div class="tn-wa-popup-header">
+                <img src="images/siya-logo.png" alt="Siya World Holidays" class="tn-wa-popup-logo">
+                <div>
+                    <h6 class="mb-0 text-white fw-bold">Siya World Holidays</h6>
+                    <small class="text-white-50">Typically replies within minutes</small>
+                </div>
+                <button class="tn-wa-close" id="waClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="tn-wa-popup-body">
+                <div class="tn-wa-msg">
+                    <p>Hello! &#128075;<br>How can we help you today? Ask us about tour packages, flights, visas or anything travel-related!</p>
+                    <span class="tn-wa-time">Siya World Holidays</span>
+                </div>
+            </div>
+            <div class="tn-wa-popup-footer">
+                <a href="https://wa.me/919898722582?text=Hello,%20I'm%20interested%20in%20your%20travel%20services" target="_blank" class="tn-wa-send-btn">
+                    <i class="fab fa-whatsapp me-2"></i> Start Chat
+                </a>
+                <a href="tel:+919898722582" class="tn-wa-call-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+        <!-- Floating Button -->
+        <button class="tn-wa-btn" id="waToggle" aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </button>
+    </div>
+
+    <script>
+    (function(){
+        var toggle = document.getElementById('waToggle');
+        var popup = document.getElementById('waPopup');
+        var close = document.getElementById('waClose');
+        if(toggle && popup && close){
+            toggle.addEventListener('click', function(){ popup.classList.toggle('tn-wa-show'); });
+            close.addEventListener('click', function(){ popup.classList.remove('tn-wa-show'); });
+        }
+    })();
+    </script>
+</body>
+
+
+</html>

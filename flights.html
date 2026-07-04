@@ -1,0 +1,2169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Siya World Holidays</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg tn-navbar fixed-top w-100 bg-white tn-z-1000" id="mainNavbar">
+        <div class="container-fluid px-4 mx-auto tn-max-w-1400 d-flex align-items-center justify-content-between">
+            <!-- Left: Mobile Menu Toggler (hidden on desktop) -->
+            <button class="navbar-toggler border-0 p-0 order-1 d-lg-none tn-w-30" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-3 text-dark"></i>
+            </button>
+
+            <!-- Center: Logo (centered on mobile, standard left on desktop) -->
+            <a class="navbar-brand d-flex align-items-center gap-3 fw-bold fs-4 tn-logo-text order-2 mx-lg-0 mx-auto" href="index.html">
+                <img src="images/siya-logo.png" alt="Siya World Holidays Logo" height="50" class="tn-header-logo">
+                <span class="tn-logo-font">Siya World Holidays</span>
+            </a>
+
+            <!-- Right: Mobile Account Toggle (hidden on desktop) -->
+            <a href="#customerDashboardOffcanvas" class="text-dark d-flex d-lg-none align-items-center text-decoration-none order-3 tn-mobile-account-toggle" data-bs-toggle="offcanvas" role="button" aria-controls="customerDashboardOffcanvas">
+                <img src="images/bar.svg" alt="Menu" width="30" height="30">
+            </a>
+
+            <!-- Links & Content -->
+            <div class="collapse navbar-collapse order-lg-3 order-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-5 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="about.html">ABOUT US</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="travel-packages.html">TRAVEL
+                            PACKAGES</a>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link text-dark fw-normal" href="contact.html">CONTACT
+                            US</a></li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0 tn-gap-2rem">
+                                </div>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="tn-about-main">
+        <!-- Hero Section -->
+        <div class="position-relative w-100">
+            <div class="overflow-hidden position-relative">
+                <img src="images/long/3rd-long.jpg" alt="Hotels Hero" class="w-100 tn-about-hero-img">
+
+                <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
+                    <h1 class="fw-bold mb-3 tn-about-hero-title">
+                        Find Your <span class="text-warning tn-about-hero-stroke">Perfect Flight</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-muted fs-5 mb-0 mx-auto tn-about-hero-desc">
+                        Explore our extensive network of airlines and routes designed to offer comfort,
+                        convenience, and
+                        unforgettable
+                        journeys to your dream destinations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="tn-breadcrumb-container">
+            <nav class="tn-breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 tn-fs-sm">
+                    <li class="breadcrumb-item"><a href="index.html"
+                            class="text-decoration-none text-secondary fw-medium">Home</a></li>
+                    <li class="breadcrumb-item active text-dark fw-medium" aria-current="page">Flights</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- About Us Text Description -->
+        <section class="mt-4">
+            <div class="container-xl px-4">
+                <p class="text-muted fs-5 lh-lg mb-0 text-start fw-light">
+                    Our thoughtful flight search engine offers the perfect route for every traveler. From
+                    first-class suites in the sky to charming regional hops tucked away in serene
+                    landscapes, we
+                    provide exceptional options that blend comfort with world-class service. Let us handle your
+                    flight while you enjoy the journey of a lifetime.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Box from Index -->
+        <div class="container-xl px-4 mt-5 d-xxxl-none">
+            <!-- Search Box -->
+            <div
+                class="tn-search-box bg-white rounded-4 p-3 p-lg-4 mx-auto tn-search-box-container tn-search-contour shadow-none">
+
+                <!-- Flight Options -->
+                <div class="d-flex flex-wrap gap-4 mb-3 ps-1">
+                    <!-- Trip Type -->
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            One-way <i class="fas fa-chevron-down small"></i>
+                        </button>
+                        <ul class="dropdown-menu tn-fs-sm shadow border-0 rounded-3">
+                            <li><a class="dropdown-item active" href="#">One-way</a></li>
+                            <li><a class="dropdown-item" href="#">Round trip</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Passengers -->
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                            1 adult <i class="fas fa-chevron-down small"></i>
+                        </button>
+                        <div class="dropdown-menu p-3 shadow border-0 rounded-3 tn-min-w-250">
+                            <!-- Adults -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Adults</h6>
+                                    <small class="text-secondary tn-fs-xs">Age 12+</small>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                        disabled><i class="fas fa-minus small"></i></button>
+                                    <span class="tn-fs-sm fw-medium">1</span>
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                            class="fas fa-plus small"></i></button>
+                                </div>
+                            </div>
+                            <!-- Children -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Children</h6>
+                                    <small class="text-secondary tn-fs-xs">Ages 2-11</small>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                        disabled><i class="fas fa-minus small"></i></button>
+                                    <span class="tn-fs-sm fw-medium">0</span>
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                            class="fas fa-plus small"></i></button>
+                                </div>
+                            </div>
+                            <!-- Infants -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Infants</h6>
+                                    <small class="text-secondary tn-fs-xs">In seat/lap</small>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                        disabled><i class="fas fa-minus small"></i></button>
+                                    <span class="tn-fs-sm fw-medium">0</span>
+                                    <button
+                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                            class="fas fa-plus small"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cabin Class -->
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Economy <i class="fas fa-chevron-down small"></i>
+                        </button>
+                        <ul class="dropdown-menu tn-fs-sm shadow border-0 rounded-3">
+                            <li><a class="dropdown-item active" href="#">Economy</a></li>
+                            <li><a class="dropdown-item" href="#">Premium economy</a></li>
+                            <li><a class="dropdown-item" href="#">Business</a></li>
+                            <li><a class="dropdown-item" href="#">First</a></li>
+                            <li><a class="dropdown-item" href="#">Multiple</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Package Fields -->
+                <div class="tn-search-fields d-flex flex-wrap flex-lg-nowrap gap-2" data-fields="flight">
+                    <div
+                        class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2 position-relative">
+                        <i class="fas fa-plane-departure text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100 tn-from-input"
+                            placeholder="From where?" aria-label="From where?">
+
+                        <!-- Desktop Swap Button -->
+                        <button type="button"
+                            class="btn bg-white border rounded-circle shadow-sm d-none d-lg-flex align-items-center justify-content-center position-absolute tn-swap-btn tn-swap-btn-desktop">
+                            <i class="fas fa-exchange-alt text-secondary small"></i>
+                        </button>
+
+                        <!-- Mobile Swap Button -->
+                        <button type="button"
+                            class="btn bg-white border rounded-circle shadow-sm d-flex d-lg-none align-items-center justify-content-center position-absolute tn-swap-btn tn-swap-btn-mobile">
+                            <i class="fas fa-exchange-alt text-secondary small tn-rotate-90"></i>
+                        </button>
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2">
+                        <i class="fas fa-plane-arrival text-secondary"></i>
+                        <input type="text" class="border-0 bg-transparent outline-none w-100 tn-to-input"
+                            placeholder="To where?" aria-label="To where?">
+                    </div>
+                    <div class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Departure" aria-label="Departure">
+                    </div>
+                    <div class="tn-field tn-return-date-field flex-grow-1 d-none align-items-center gap-2 px-3 border rounded-3 py-2">
+                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                        <input type="date" class="border-0 bg-transparent outline-none w-100 text-secondary"
+                            placeholder="Return" aria-label="Return">
+                    </div>
+                    <button class="btn tn-btn-primary tn-search-btn fw-light text-nowrap px-4">SEARCH</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destinations Content -->
+        <section class="pb-5 tn-mt-2rem">
+            <div class="container-xl px-4">
+                <div class="row g-4">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 col-xxxl-2">
+                        <!-- Airlines Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Airlines</h5>
+                                <i class="fas fa-chevron-down text-muted small"></i>
+                            </div>
+
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio">
+                                    <input class="form-check-input border-secondary" type="checkbox" name="airline"
+                                        id="air1">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="air1">Air
+                                        France</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" name="airline"
+                                        id="air2">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="air2">Lufthansa</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" name="airline"
+                                        id="air3">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="air3">Emirates</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" name="airline"
+                                        id="air4">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="air4">Qatar
+                                        Airways</label>
+                                </div>
+                                <div class="form-check tn-custom-radio border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" name="airline"
+                                        id="air5">
+                                    <label class="form-check-label text-secondary tn-fs-sm" for="air5">British
+                                        Airways</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stops Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="mb-4">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Stops</h5>
+                                <div class="d-flex flex-column gap-3 mt-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="stops1">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                                for="stops1">Non-stop</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">342</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="stops2">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="stops2">1
+                                                Stop</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">815</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="form-check tn-custom-radio mb-0">
+                                            <input class="form-check-input border-secondary" type="checkbox"
+                                                id="stops3">
+                                            <label class="form-check-label text-dark tn-fs-sm ms-2" for="stops3">2+
+                                                Stops</label>
+                                        </div>
+                                        <span class="text-secondary tn-fs-sm">120</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price Range Section -->
+                            <div class="border-top pt-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Price per passenger</h5>
+                                    <i class="fas fa-chevron-down text-muted small"></i>
+                                </div>
+                                <div class="mt-4">
+                                    <p class="tn-fs-sm text-dark fw-medium mb-3" id="priceDisplay">$200 - $1500+</p>
+                                    <div class="tn-multi-range">
+                                        <div class="tn-multi-range-track"></div>
+                                        <div class="tn-multi-range-active" id="priceActive"></div>
+                                        <input type="range" id="minPrice" min="200" max="1500" value="200">
+                                        <input type="range" id="maxPrice" min="200" max="1500" value="1500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Departure Time Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="mb-3">
+                                <h5 class="fw-bold mb-1 tn-logo-text tn-text-brand-dark">Departure Time</h5>
+                            </div>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="depTime1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="depTime1">Morning
+                                            (06:00 - 12:00)</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">145</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="depTime2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="depTime2">Afternoon
+                                            (12:00 - 18:00)</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">212</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="depTime3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="depTime3">Evening
+                                            (18:00 - 00:00)</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">180</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="depTime4">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="depTime4">Night
+                                            (00:00 - 06:00)</label>
+                                    </div>
+                                    <span class="text-secondary tn-fs-sm">45</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabin Class Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Cabin Class</h5>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="cabinClass1">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                        for="cabinClass1">Economy</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0 border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="cabinClass2">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="cabinClass2">Premium
+                                        Economy</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0 border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="cabinClass3">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="cabinClass3">Business
+                                        Class</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0 border-top pt-3">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="cabinClass4">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="cabinClass4">First
+                                        Class</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Flight Duration Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Flight Duration</h5>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="duration1">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="duration1">Under 4
+                                            hours</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start border-top pt-3">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="duration2">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="duration2">4 - 8
+                                            hours</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start border-top pt-3">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="duration3">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="duration3">8 - 12
+                                            hours</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-start border-top pt-3">
+                                    <div class="form-check tn-custom-radio mb-0">
+                                        <input class="form-check-input border-secondary" type="checkbox" id="duration4">
+                                        <label class="form-check-label text-dark tn-fs-sm ms-2" for="duration4">Over 12
+                                            hours</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Main Content (Grid) -->
+                    <div class="col-lg-9 col-xxxl-8">
+                        <!-- Search Box Duplicated for 2350px -->
+                        <div class="mb-4 d-none d-xxxl-block">
+                            <!-- Search Box -->
+                            <div
+                                class="tn-search-box bg-white rounded-4 p-3 p-lg-4 mx-auto tn-search-box-container tn-search-contour shadow-none">
+
+                                <!-- Flight Options -->
+                                <div class="d-flex flex-wrap gap-4 mb-3 ps-1">
+                                    <!-- Trip Type -->
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            One-way <i class="fas fa-chevron-down small"></i>
+                                        </button>
+                                        <ul class="dropdown-menu tn-fs-sm shadow border-0 rounded-3">
+                                            <li><a class="dropdown-item active" href="#">One-way</a></li>
+                                            <li><a class="dropdown-item" href="#">Round trip</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Passengers -->
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                            data-bs-auto-close="outside">
+                                            1 adult <i class="fas fa-chevron-down small"></i>
+                                        </button>
+                                        <div class="dropdown-menu p-3 shadow border-0 rounded-3 tn-min-w-250">
+                                            <!-- Adults -->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <div>
+                                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Adults</h6>
+                                                    <small class="text-secondary tn-fs-xs">Age 12+</small>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                                        disabled><i class="fas fa-minus small"></i></button>
+                                                    <span class="tn-fs-sm fw-medium">1</span>
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                                            class="fas fa-plus small"></i></button>
+                                                </div>
+                                            </div>
+                                            <!-- Children -->
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <div>
+                                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Children</h6>
+                                                    <small class="text-secondary tn-fs-xs">Ages 2-11</small>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                                        disabled><i class="fas fa-minus small"></i></button>
+                                                    <span class="tn-fs-sm fw-medium">0</span>
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                                            class="fas fa-plus small"></i></button>
+                                                </div>
+                                            </div>
+                                            <!-- Infants -->
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0 text-dark fw-medium tn-fs-sm">Infants</h6>
+                                                    <small class="text-secondary tn-fs-xs">In seat/lap</small>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"
+                                                        disabled><i class="fas fa-minus small"></i></button>
+                                                    <span class="tn-fs-sm fw-medium">0</span>
+                                                    <button
+                                                        class="btn btn-sm btn-light border rounded-circle d-flex align-items-center justify-content-center tn-btn-circle-28"><i
+                                                            class="fas fa-plus small"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cabin Class -->
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center gap-2 fw-medium"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Economy <i class="fas fa-chevron-down small"></i>
+                                        </button>
+                                        <ul class="dropdown-menu tn-fs-sm shadow border-0 rounded-3">
+                                            <li><a class="dropdown-item active" href="#">Economy</a></li>
+                                            <li><a class="dropdown-item" href="#">Premium economy</a></li>
+                                            <li><a class="dropdown-item" href="#">Business</a></li>
+                                            <li><a class="dropdown-item" href="#">First</a></li>
+                                            <li><a class="dropdown-item" href="#">Multiple</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Package Fields -->
+                                <div class="tn-search-fields d-flex flex-wrap flex-lg-nowrap gap-2"
+                                    data-fields="flight">
+                                    <div
+                                        class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2 position-relative">
+                                        <i class="fas fa-plane-departure text-secondary"></i>
+                                        <input type="text"
+                                            class="border-0 bg-transparent outline-none w-100 tn-from-input"
+                                            placeholder="From where?" aria-label="From where?">
+
+                                        <!-- Desktop Swap Button -->
+                                        <button type="button"
+                                            class="btn bg-white border rounded-circle shadow-sm d-none d-lg-flex align-items-center justify-content-center position-absolute tn-swap-btn tn-swap-btn-desktop">
+                                            <i class="fas fa-exchange-alt text-secondary small"></i>
+                                        </button>
+
+                                        <!-- Mobile Swap Button -->
+                                        <button type="button"
+                                            class="btn bg-white border rounded-circle shadow-sm d-flex d-lg-none align-items-center justify-content-center position-absolute tn-swap-btn tn-swap-btn-mobile">
+                                            <i class="fas fa-exchange-alt text-secondary small tn-rotate-90"></i>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2">
+                                        <i class="fas fa-plane-arrival text-secondary"></i>
+                                        <input type="text"
+                                            class="border-0 bg-transparent outline-none w-100 tn-to-input"
+                                            placeholder="To where?" aria-label="To where?">
+                                    </div>
+                                    <div
+                                        class="tn-field flex-grow-1 d-flex align-items-center gap-2 px-3 border rounded-3 py-2">
+                                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                                        <input type="date"
+                                            class="border-0 bg-transparent outline-none w-100 text-secondary"
+                                            placeholder="Departure" aria-label="Departure">
+                                    </div>
+                                    <div
+                                        class="tn-field tn-return-date-field flex-grow-1 d-none align-items-center gap-2 px-3 border rounded-3 py-2">
+                                        <i class="far fa-calendar text-secondary tn-cursor-pointer"></i>
+                                        <input type="date"
+                                            class="border-0 bg-transparent outline-none w-100 text-secondary"
+                                            placeholder="Return" aria-label="Return">
+                                    </div>
+                                    <button
+                                        class="btn tn-btn-primary tn-search-btn fw-light text-nowrap px-4">SEARCH</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top bar -->
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                            <span class="text-secondary tn-fs-sm">Showing 1 – 12 of 20 results</span>
+                            <div class="d-flex align-items-center gap-2 bg-white rounded-pill border px-3 py-1">
+                                <span class="text-secondary tn-fs-sm text-nowrap">Sort by:</span>
+                                <select
+                                    class="form-select form-select-sm border-0 bg-transparent shadow-none tn-fs-sm tn-text-brand-dark fw-medium tn-sort-select" aria-label="Select option">
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Rating: Low to High</option>
+                                    <option>Rating: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Flight Results Placeholder -->
+                        <div class="row g-4 mb-5">
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-2 mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto mb-2 text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.50458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.5095 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_roma.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">LHR</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">London Heathrow</div>
+                                                    <div class="small text-muted">London, UK</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">FCO</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Rome Fiumicino</div>
+                                                    <div class="small text-muted">Rome, Italy</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">24 MAY 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">08:45</div>
+                                                            <div class="small text-muted">AM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">12:20</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">SkyWings Airlines <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">SW 2045</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T5</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">SW 2045</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">24 MAY 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$1,249<span
+                                                            class="tn-ticket-price-cents">.50</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.50458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.5095 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_london.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">FCO</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Rome Fiumicino</div>
+                                                    <div class="small text-muted">Rome, Italy</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">LHR</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">London Heathrow</div>
+                                                    <div class="small text-muted">London, UK</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">05 JUN 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">14:30</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">18:05</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">SkyWings Airlines <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">SW 2046</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T5</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">SW 2046</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">05 JUN 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$1,249<span
+                                                            class="tn-ticket-price-cents">.50</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-2 mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto mb-2 text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.00458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.0095 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_paris.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">LHR</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">London Heathrow</div>
+                                                    <div class="small text-muted">London, UK</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">CDG</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Paris Charles de Gaulle
+                                                    </div>
+                                                    <div class="small text-muted">Paris, France</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">25 MAY 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">10:15</div>
+                                                            <div class="small text-muted">AM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">13:50</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Air France <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">AF 401</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T3</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">AF 401</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">25 MAY 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$599<span
+                                                            class="tn-ticket-price-cents">.65</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-2 mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto mb-2 text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.00458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.0095 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_london.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">FCO</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Rome Fiumicino</div>
+                                                    <div class="small text-muted">Rome, Italy</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">LHR</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">London Heathrow</div>
+                                                    <div class="small text-muted">London, UK</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">06 JUN 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">09:00</div>
+                                                            <div class="small text-muted">AM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">12:35</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Italiair <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">AZ 402</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T3</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">AZ 402</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">06 JUN 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$589<span
+                                                            class="tn-ticket-price-cents">.99</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-2 mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto mb-2 text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.75458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.7595 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_paris.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">CDG</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Paris Charles de Gaulle
+                                                    </div>
+                                                    <div class="small text-muted">Paris, France</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">FCO</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Rome Fiumicino</div>
+                                                    <div class="small text-muted">Rome, Italy</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">28 MAY 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">18:30</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">22:05</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Air France <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">AF 405</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T1</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">AF 405</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">28 MAY 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$439<span
+                                                            class="tn-ticket-price-cents">.50</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="tn-flight-ticket">
+                                    <!-- Sidebar -->
+                                    <div class="tn-ticket-sidebar">
+                                        <i
+                                            class="fas fa-plane fa-lg mb-2 mb-lg-0 tn-sidebar-plane-icon tn-rotate-minus-45"></i>
+                                        <span class="tn-ticket-sidebar-text mt-lg-auto mb-lg-auto fw-medium">ENJOY YOUR
+                                            FLIGHT</span>
+                                        <svg class="d-none d-lg-block mt-auto mb-2 text-white-50"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"
+                                            width="30" height="30">
+                                            <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1">
+                                                <path
+                                                    d="M10.5 8.49995c-0.0001 0.83871 -0.2111 1.66395 -0.61366 2.39965 -0.40258 0.7358 -0.98378 1.3585 -1.69009 1.8108 -0.70631 0.4522 -1.51504 0.7196 -2.35175 0.7773 -0.83671 0.0578 -1.67452 -0.0958 -2.4363 -0.4467 -0.76178 -0.3509 -1.42305 -0.8877 -1.92296 -1.5612 -0.499902 -0.6734 -0.822371 -1.4618 -0.937723 -2.2925 -0.115351 -0.83073 -0.019879 -1.67714 0.27763 -2.4613C1.12266 5.94184 1.61264 5.24511 2.25 4.69995">
+                                                </path>
+                                                <path
+                                                    d="M5.28003 6.65002c-0.10568 0.2182 -0.16039 0.45756 -0.16 0.7 -0.00133 0.2013 0.03734 0.40085 0.11376 0.58708 0.07642 0.18623 0.18906 0.35542 0.3314 0.49776 0.14234 0.14234 0.31154 0.25499 0.49776 0.33141 0.18623 0.07642 0.38579 0.11508 0.58708 0.11375 0.20422 0 0.40007 0.08113 0.54447 0.22553 0.1444 0.14441 0.22553 0.34026 0.22553 0.54447V13.12">
+                                                </path>
+                                                <path
+                                                    d="M0.569946 9.27005H2.41995c0.20557 -0.00534 0.41014 0.03055 0.60162 0.10554 0.19148 0.075 0.36601 0.18759 0.51327 0.33113 0.14727 0.14353 0.26429 0.31508 0.34417 0.75458 0.07989 0.1895 0.12101 0.3931 0.12094 0.5988v2.45">
+                                                </path>
+                                                <path
+                                                    d="m13.2599 1.96987 -1 -0.34c-0.0702 -0.02388 -0.1464 -0.0241 -0.2168 -0.00062 -0.0705 0.02347 -0.1313 0.06935 -0.1732 0.13062l-0.73 1.13L7.13994 0.889866C6.8238 0.703554 6.4704 0.589418 6.105 0.555625c-0.36539 -0.033793 -0.73374 0.013593 -1.07868 0.138766 -0.34494 0.125174 -0.65796 0.325039 -0.91664 0.585299 -0.25869 0.26026 -0.45666 0.57448 -0.57974 0.92018 -0.03392 0.08968 -0.04849 0.18552 -0.04276 0.28123 0.00573 0.09571 0.03164 0.18913 0.07602 0.27412 0.04439 0.08499 0.10624 0.15963 0.18151 0.21903 0.07527 0.0594 0.16225 0.10221 0.25523 0.12562l2.61 0.84 0.26 0.09 0.49 1.68c0.01574 0.05849 0.04599 0.11207 0.08794 0.15578 0.04195 0.0437 0.09425 0.0761 0.15206 0.09422l1.18 0.38c0.06024 0.01962 0.12452 0.02345 0.18666 0.01111 0.06215 -0.01234 0.12008 -0.04043 0.16826 -0.08158 0.04817 -0.04115 0.08497 -0.09398 0.10688 -0.15343 0.0219 -0.05945 0.02817 -0.12353 0.0182 -0.1861l-0.26 -1.25h0.17l2.54996 0.83c0.1672 0.0576 0.3503 0.04684 0.7595 -0.02996 0.1592 -0.0768 0.2816 -0.2134 0.3405 -0.38004l0.9 -2.77c0.0099 -0.07481 -0.0053 -0.15078 -0.0433 -0.21595 -0.0381 -0.06518 -0.0967 -0.11586 -0.1667 -0.14405Z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Main Body -->
+                                    <div class="tn-ticket-main">
+                                        <img src="images/ticket_bg_roma.png" alt="" class="tn-ticket-bg">
+
+                                        <div class="tn-ticket-content">
+
+                                            <!-- Airports -->
+                                            <div class="d-flex align-items-center justify-content-between tn-max-w-70">
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">FCO</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Rome Fiumicino</div>
+                                                    <div class="small text-muted">Rome, Italy</div>
+                                                </div>
+
+                                                <div class="flex-grow-1 px-4 text-center">
+                                                    <div class="tn-ticket-dashed-line">
+                                                        <i class="fas fa-plane tn-ticket-dashed-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tn-min-w-150">
+                                                    <div class="tn-ticket-airport">CDG</div>
+                                                    <div class="fw-bold mt-1 tn-text-brand-dark">Paris Charles de Gaulle
+                                                    </div>
+                                                    <div class="small text-muted">Paris, France</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Time Info -->
+                                            <div class="d-flex flex-wrap mb-3 mt-3">
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTURE</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-calendar-days text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">10 JUN 2026</div>
+                                                            <div class="small text-muted">Friday</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">DEPARTS</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">20:15</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item pe-4 me-4">
+                                                    <div class="tn-ticket-label">ARRIVES</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-light fa-clock text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">23:50</div>
+                                                            <div class="small text-muted">PM</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tn-ticket-info-item">
+                                                    <div class="tn-ticket-label">DURATION</div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-sharp fa-light fa-stopwatch text-muted fa-lg"></i>
+                                                        <div>
+                                                            <div class="tn-ticket-value">02h 35m</div>
+                                                            <div class="small text-muted">Non-stop</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Bottom Info Bar -->
+                                            <div class="tn-ticket-bottom-bar position-relative z-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <i
+                                                        class="fa-light fa-plane-departure text-muted fa-lg tn-rotate-minus-15"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">AIRLINE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Air France <i
+                                                                class="fab fa-envira ms-1 tn-color-accent"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fas fa-barcode text-muted fa-lg d-md-none"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">FLIGHT</div>
+                                                        <div class="fw-bold tn-text-brand-dark">AF 406</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-building-memo text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">TERMINAL</div>
+                                                        <div class="fw-bold tn-text-brand-dark">T1</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-seat-airline text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">CLASS</div>
+                                                        <div class="fw-bold tn-text-brand-dark">Economy</div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-none d-md-block tn-vertical-divider"></div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="fa-light fa-suitcase-rolling text-muted fa-lg"></i>
+                                                    <div>
+                                                        <div class="tn-ticket-label mb-0">BAGGAGE</div>
+                                                        <div class="fw-bold tn-text-brand-dark">23 kg</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div class="tn-ticket-divider d-none d-lg-block"></div>
+
+                                    <!-- Stub -->
+                                    <div class="tn-ticket-stub">
+                                        <div class="d-flex flex-column h-100 justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <div class="tn-ticket-label">PASSENGER</div>
+                                                    <div class="fw-bold tn-color-accent fs-5">John Traveler</div>
+                                                </div>
+                                                <div>
+                                                    <span class="badge rounded-pill text-white tn-eticket-badge">E-TICKET</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="tn-ticket-label">FLIGHT</div>
+                                                    <div class="fw-bold tn-text-brand-dark">AF 406</div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="tn-ticket-label">DATE</div>
+                                                    <div class="fw-bold tn-text-brand-dark">10 JUN 2026</div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="mb-3">
+                                                    <div class="tn-ticket-label">PRICE</div>
+                                                    <div class="tn-ticket-price">$450<span
+                                                            class="tn-ticket-price-cents">.75</span></div>
+                                                </div>
+                                                <button
+                                                    class="btn tn-ticket-btn-select w-100 fw-light rounded-pill py-2 tn-fs-110">SELECT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="col-12 mt-5">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-end gap-2">
+                                        <li class="page-item disabled">
+                                            <a class="page-link rounded-3 d-flex align-items-center border-0 text-secondary"
+                                                href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                                        </li>
+                                        <li class="page-item active"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 tn-bg-green text-white tn-page-btn"
+                                                href="#">1</a></li>
+                                        <li class="page-item"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 text-dark fw-medium tn-page-btn"
+                                                href="#">2</a></li>
+                                        <li class="page-item"><a
+                                                class="page-link rounded-3 d-flex align-items-center justify-content-center border-0 text-dark fw-medium tn-page-btn"
+                                                href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link rounded-3 d-flex align-items-center border-0 text-dark fw-medium"
+                                                href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Right Sidebar (Visible only on >=2350px) -->
+                    <div class="col-xxxl-2 d-none d-xxxl-block">
+                        <!-- Amenities Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <h5 class="fw-bold mb-4 tn-logo-text tn-text-brand-dark">Amenities</h5>
+
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fa-light fa-briefcase text-dark fs-5"></i>
+                                        <span class="text-dark tn-fs-md">Carry-on bag</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn border-0 text-secondary p-0 d-flex align-items-center justify-content-center bg-transparent shadow-none tn-amenity-btn">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold mx-1">0</span>
+                                        <button class="btn border-0 text-dark p-0 d-flex align-items-center justify-content-center bg-transparent shadow-none tn-amenity-btn">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fa-light fa-suitcase-rolling text-dark fs-5"></i>
+                                        <span class="text-dark tn-fs-md">Checked bag</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button class="btn border-0 text-secondary p-0 d-flex align-items-center justify-content-center bg-transparent shadow-none tn-amenity-btn">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold mx-1">0</span>
+                                        <button class="btn border-0 text-dark p-0 d-flex align-items-center justify-content-center bg-transparent shadow-none tn-amenity-btn">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4 border-secondary">
+
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="pe-3">
+                                    <h6 class="fw-bold mb-1 text-dark tn-fs-md">Hide basic tickets</h6>
+                                    <p class="text-muted mb-0 small">Only show options with seat
+                                        selection and carry-on bag.</p>
+                                </div>
+                                <div class="form-check form-switch m-0 pt-1 d-flex align-items-center">
+                                    <input class="form-check-input m-0 cursor-pointer" type="checkbox" role="switch"
+                                        id="hideBasicTickets">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Flight Quality Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Flight quality</h5>
+                                <i class="fas fa-chevron-up text-muted small"></i>
+                            </div>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="fq1-right">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="fq1-right">Wi-Fi
+                                        flights only</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="fq2-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="fq2-right">Red-eye
+                                        flights</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="fq3-right">
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="fq3-right">491 longer
+                                        flights</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="fq4-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="fq4-right">Flights with
+                                        self-transfers</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aircraft Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Aircraft</h5>
+                                <i class="fas fa-chevron-up text-muted small"></i>
+                            </div>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="ac1-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="ac1-right">Narrow-body
+                                        jet</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="ac2-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                        for="ac2-right">Other</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="ac3-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="ac3-right">Regional
+                                        jet</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="ac4-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="ac4-right">Turbo-prop
+                                        plane</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="ac5-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="ac5-right">Wide-body
+                                        jet</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Model Block -->
+                        <div class="bg-white rounded-4 border p-4 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0 tn-logo-text tn-text-brand-dark">Model</h5>
+                                <i class="fas fa-chevron-up text-muted small"></i>
+                            </div>
+                            <div class="d-flex flex-column gap-3 mt-4">
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl1-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl1-right">Airbus
+                                        A220</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl2-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl2-right">Airbus
+                                        A320neo</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl3-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl3-right">Airbus
+                                        A330neo</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl4-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl4-right">Airbus
+                                        A350</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl5-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl5-right">Airbus
+                                        A380</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl6-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl6-right">Boeing
+                                        737</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl7-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl7-right">Boeing 737
+                                        MAX 8</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl8-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl8-right">Boeing 737
+                                        MAX 9</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl9-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl9-right">Boeing
+                                        747</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl10-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl10-right">Boeing
+                                        777</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl11-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2" for="mdl11-right">Boeing
+                                        787</label>
+                                </div>
+                                <div class="form-check tn-custom-radio mb-0">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="mdl12-right"
+                                        checked>
+                                    <label class="form-check-label text-dark tn-fs-sm ms-2"
+                                        for="mdl12-right">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="tn-footer py-5">
+            <div class="container-xl px-4">
+                <div class="row g-5 mb-5">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- Brand -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="images/siya-logo.png" alt="Siya World Holidays" height="45" class="tn-footer-logo">
+                            <span class="text-white fw-bold fs-5 tn-logo-font">Siya World Holidays</span>
+                        </div>
+                        <p class="tn-footer-tagline">Travel Curated, Memories Created.</p>
+                        <p class="text-white-50 small">Ahmedabad-based travel agency offering curated domestic & international tour packages, flight bookings, train tickets and visa services.</p>
+                        <p class="text-white-50 small mb-0"><i class="fas fa-file-alt me-1"></i> GST: 24BYSPR7681D1ZT</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="https://www.facebook.com/share/1D79H1ZPWE/?mibextid=wwXIfr" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor" width="14" height="14"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                            <a href="https://www.instagram.com/siya_world_holidays" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="18" height="18"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                            <a href="https://wa.me/919898722582" target="_blank" class="tn-social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="16" height="16"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+                        </div>
+                    </div>
+                <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Quick Links</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="tn-footer-link">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="tn-footer-link">About Us</a></li>
+                            <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Tour Packages</a>
+                            </li>
+                            <li class="mb-2"><a href="travel-packages.html" class="tn-footer-link">Destinations</a></li>
+                            <li class="mb-2"><a href="#" class="tn-footer-link">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Support</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="tn-footer-link">FAQ</a></li>
+                            <li class="mb-2"><a href="contact.html" class="tn-footer-link">Contact Us</a></li>
+                            <li class="mb-2"><a href="privacy.html" class="tn-footer-link">Privacy Policy</a></li>
+                            <li class="mb-2"><a href="terms.html" class="tn-footer-link">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Contact Us</h6>
+                        <ul class="list-unstyled">
+                            <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                                <i class="fas fa-phone text-warning mt-1"></i>
+                                <span>+91 98987 22582</span>
+                            </li>
+                            <li class="d-flex gap-2 mb-3 text-white-50 align-items-start">
+                                <i class="fas fa-envelope text-warning mt-1"></i>
+                                <span>info@siyaworldholidays.com</span>
+                            </li>
+                            <li class="d-flex gap-2 text-white-50 align-items-start">
+                                <i class="fas fa-map-marker-alt text-warning mt-1"></i>
+                                <span>A 404 Panchshilp Residency,<br>Opp Shreedhar Bunglows, Nikol,<br>Ahmedabad 382350, Gujarat</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="col-lg-3 col-md-6">
+                        <h6 class="text-white fw-bold mb-4 text-uppercase">Get in Touch</h6>
+                        <p class="text-white-50 mb-3 small">Stay updated with our latest travel news, exclusive offers, and expert marketing insights delivered directly to your inbox. Join our community today!</p>
+                        <a href="tel:+919898722582" class="btn btn-warning btn-sm rounded-pill px-3 py-2 fw-medium text-dark mb-2 d-inline-block">Call +91 98987 22582</a><br><a href="https://wa.me/919898722582" target="_blank" class="btn btn-outline-light btn-sm rounded-pill px-3 py-2 fw-medium d-inline-block mt-1">WhatsApp Us</a>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <hr class="border-secondary">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-3">
+                    <p class="text-white-50 small mb-0">Copyright &copy; 2026 Siya World Holidays. All rights reserved. | Crafted with &#10084;&#65039; by <a href="https://www.linkedin.com/in/chirag-vasani-7b7729b3/" target="_blank" class="text-warning text-decoration-none">Chirag Vasani</a></p>
+                    <div class="d-flex gap-4">
+                        <a href="privacy.html" class="tn-footer-link small">Privacy Policy</a>
+                        <a href="terms.html" class="tn-footer-link small">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+        </div>
+
+        
+        </div>
+
+        <!-- ========== OFFCANVAS MENU ========== -->
+        <div class="offcanvas offcanvas-end tn-offcanvas-w-350" tabindex="-1" id="customerDashboardOffcanvas" aria-labelledby="customerDashboardOffcanvasLabel">
+            <div class="offcanvas-header pt-4 pb-0 border-0 d-flex flex-column align-items-start px-4">
+                <button type="button" class="btn border-0 p-0 mb-4 text-dark" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fa-light fa-arrow-right-to-line fs-3 text-muted"></i>
+                </button>
+                <div class="d-flex align-items-center gap-3 w-100">
+                    <img src="images/2face.jpg" alt="User Avatar" class="rounded-circle tn-user-avatar">
+                    <div class="d-flex flex-column">
+                        <span class="fw-normal text-dark">John Traveler</span>
+                        <span class="text-muted small fw-light">john@traveler.com</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 text-muted opacity-25">
+            <div class="offcanvas-body d-flex flex-column px-4">
+                <ul class="list-unstyled d-flex flex-column gap-4 mb-auto px-2">
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Profile</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-money-check fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Coupons</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-cart-shopping fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Order History</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-bell fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Notification</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gift fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Favorites</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-gear fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Settings</span></a></li>
+                    <li><a href="#" class="text-dark text-decoration-none d-flex align-items-center gap-3"><i class="fa-light fa-user-headset fs-5 text-muted text-center tn-w-24"></i> <span class="fw-light">Support & FAQ</span></a></li>
+                </ul>
+                
+                <div class="mt-auto pt-4 pb-3">
+                    <button class="btn w-100 py-3 rounded-4 d-flex align-items-center justify-content-center gap-2 bg-white shadow-none tn-logout-btn">
+                        <i class="fa-light fa-arrow-right-from-bracket fs-5"></i>
+                        <span class="fw-normal tn-letter-space-05">LOGOUT</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap 5 JS Bundle -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/flights.js"></script>
+
+    <!-- ========== WHATSAPP FLOATING WIDGET ========== -->
+    <div class="tn-wa-widget" id="waWidget">
+        <!-- Chat Popup -->
+        <div class="tn-wa-popup" id="waPopup">
+            <div class="tn-wa-popup-header">
+                <img src="images/siya-logo.png" alt="Siya World Holidays" class="tn-wa-popup-logo">
+                <div>
+                    <h6 class="mb-0 text-white fw-bold">Siya World Holidays</h6>
+                    <small class="text-white-50">Typically replies within minutes</small>
+                </div>
+                <button class="tn-wa-close" id="waClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="tn-wa-popup-body">
+                <div class="tn-wa-msg">
+                    <p>Hello! &#128075;<br>How can we help you today? Ask us about tour packages, flights, visas or anything travel-related!</p>
+                    <span class="tn-wa-time">Siya World Holidays</span>
+                </div>
+            </div>
+            <div class="tn-wa-popup-footer">
+                <a href="https://wa.me/919898722582?text=Hello,%20I'm%20interested%20in%20your%20travel%20services" target="_blank" class="tn-wa-send-btn">
+                    <i class="fab fa-whatsapp me-2"></i> Start Chat
+                </a>
+                <a href="tel:+919898722582" class="tn-wa-call-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                    Call Now
+                </a>
+            </div>
+        </div>
+        <!-- Floating Button -->
+        <button class="tn-wa-btn" id="waToggle" aria-label="Chat on WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </button>
+    </div>
+
+    <script>
+    (function(){
+        var toggle = document.getElementById('waToggle');
+        var popup = document.getElementById('waPopup');
+        var close = document.getElementById('waClose');
+        if(toggle && popup && close){
+            toggle.addEventListener('click', function(){ popup.classList.toggle('tn-wa-show'); });
+            close.addEventListener('click', function(){ popup.classList.remove('tn-wa-show'); });
+        }
+    })();
+    </script>
+</body>
+
+</html>

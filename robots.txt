@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /backup/
+Disallow: /includes/
+
+Sitemap: https://www.siyatourntravels.com/sitemap.xml
